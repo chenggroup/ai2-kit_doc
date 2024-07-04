@@ -3,6 +3,7 @@ name: Build and Deploy Docs
 on:
   repository_dispatch:
     types: [pypi-publish]
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
