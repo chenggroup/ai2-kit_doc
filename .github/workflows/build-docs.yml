@@ -29,25 +29,21 @@ jobs:
         GITLAB_REPO_URL: ${{ secrets.GITLAB_REPO_URL }}
       run: |
         git clone https://${GITLAB_USER}:${GITLAB_TOKEN}@${GITLAB_REPO_URL}.git docs
-
-    - name: Run image
-      uses: abatilo/actions-poetry@v2
     
     - name: Install dependencies
       run: |
-        rm -f poetry.lock
-        poetry install
+        pip install .[doc]
       working-directory: docs
     
     - name: Sphinx APIDoc
       run: |
-        poetry run sphinx-apidoc -f -o jupyter-book/_api/ ai2_kit/ --separate
+        sphinx-apidoc -f -o jupyter-book/_api/ ai2_kit/ --separate
       working-directory: docs
 
     # Build the book
     - name: Build the book
       run: |
-        poetry run jupyter-book build jupyter-book/
+        jupyter-book build jupyter-book/
       working-directory: docs
 
     # Push the book's HTML to github-pages
