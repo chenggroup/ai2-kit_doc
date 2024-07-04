@@ -32,7 +32,7 @@ jobs:
     
     - name: Install dependencies
       run: |
-        pip install .[doc]
+        pip install jupyter-book sphinx sphinx-apidoc
       working-directory: docs
     
     - name: Sphinx APIDoc
