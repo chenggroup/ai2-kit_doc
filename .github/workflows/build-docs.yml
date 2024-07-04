@@ -29,7 +29,9 @@ jobs:
         GITLAB_REPO_URL: ${{ secrets.GITLAB_REPO_URL }}
       run: |
         git clone https://${GITLAB_USER}:${GITLAB_TOKEN}@${GITLAB_REPO_URL}.git docs
-        cd docs
+
+    - name: Set up working directory
+      working-directory: docs
 
     - name: Run image
       uses: abatilo/actions-poetry@v2
