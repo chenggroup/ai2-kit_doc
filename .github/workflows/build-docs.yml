@@ -30,9 +30,6 @@ jobs:
       run: |
         git clone https://${GITLAB_USER}:${GITLAB_TOKEN}@${GITLAB_REPO_URL}.git docs
 
-    - name: Set up working directory
-      working-directory: docs
-
     - name: Run image
       uses: abatilo/actions-poetry@v2
     
@@ -40,15 +37,18 @@ jobs:
       run: |
         rm -f poetry.lock
         poetry install
+      working-directory: docs
     
     - name: Sphinx APIDoc
       run: |
         poetry run sphinx-apidoc -f -o jupyter-book/_api/ ai2_kit/ --separate
+      working-directory: docs
 
     # Build the book
     - name: Build the book
       run: |
         poetry run jupyter-book build jupyter-book/
+      working-directory: docs
 
     # Push the book's HTML to github-pages
     - name: GitHub Pages action
@@ -56,3 +56,4 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: jupyter-book/_build/html
+      working-directory: docs
