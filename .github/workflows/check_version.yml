@@ -67,7 +67,7 @@ jobs:
     
     - name: Sphinx APIDoc
       run: |
-        sphinx-apidoc -f -o ai2-kit/jupyter-book/api/ ai2-kit/ai2_kit/ --separate
+        sphinx-apidoc -f -o ai2-kit/jupyter-book/_api/ ai2-kit/ai2_kit/ --separate
 
     # Build the book
     - name: Build the book
@@ -80,19 +80,3 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ai2-kit/jupyter-book/_build/html
-        destination_dir: v${{ needs.check-version.outputs.new_version }}
-    
-    - name: Create new tag
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git tag -a v${{ needs.check-version.outputs.new_version }} -m "Documentation update for version ${{ needs.check-version.outputs.new_version }}"
-        git push origin v${{ needs.check-version.outputs.new_version }}
-
-    - name: Update latest symlink
-      run: |
-        git checkout gh-pages
-        ln -sfn v${{ needs.check-version.outputs.new_version }} latest
-        git add latest
-        git commit -m "Update latest symlink to v${{ needs.check-version.outputs.new_version }}"
-        git push origin gh-pages
