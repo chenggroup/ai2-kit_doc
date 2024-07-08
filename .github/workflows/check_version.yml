@@ -45,7 +45,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.x'
+        python-version: '3.11'
 
     - name: Install dependencies
       run: |
@@ -67,7 +67,7 @@ jobs:
     
     - name: Sphinx APIDoc
       run: |
-        sphinx-apidoc -f -o ai2-kit/jupyter-book/_api/ ai2_kit/ --separate
+        sphinx-apidoc -f -o ai2-kit/jupyter-book/_api/ ai2-kit/ai2_kit/ --separate
 
     # Build the book
     - name: Build the book
