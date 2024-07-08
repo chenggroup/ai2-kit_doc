@@ -1,6 +1,10 @@
 name: Build and Deploy Docs
 
 on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
   repository_dispatch:
     types: [pypi-publish]
   workflow_dispatch:
@@ -28,27 +32,26 @@ jobs:
         GITLAB_USER: ${{ secrets.GITLAB_USER }}
         GITLAB_REPO_URL: ${{ secrets.GITLAB_REPO_URL }}
       run: |
-        git clone https://${GITLAB_USER}:${GITLAB_TOKEN}@${GITLAB_REPO_URL}.git docs
+        git clone https://${GITLAB_USER}:${GITLAB_TOKEN}@${GITLAB_REPO_URL}.git
     
     - name: Install dependencies
       run: |
-        pip install jupyter-book sphinx
-      working-directory: docs
+        pip install ./ai2-kit
+        pip install jupyter-book sphinx-apidoc
     
     - name: Sphinx APIDoc
       run: |
-        sphinx-apidoc -f -o jupyter-book/_api/ ai2_kit/ --separate
-      working-directory: docs
+        sphinx-apidoc -f -o ai2-kit/jupyter-book/_api/ ai2_kit/ --separate
 
     # Build the book
     - name: Build the book
       run: |
-        jupyter-book build jupyter-book/
-      working-directory: docs
+        jupyter-book build ai2-kit/jupyter-book/
 
     # Push the book's HTML to github-pages
     - name: GitHub Pages action
+      if: github.event_name != 'pull_request'
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: docs/jupyter-book/_build/html
+        publish_dir: ai2-kit/jupyter-book/_build/html
