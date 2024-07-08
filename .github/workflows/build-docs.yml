@@ -1,10 +1,6 @@
 name: Build and Deploy Docs
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
   repository_dispatch:
     types: [pypi-publish]
   workflow_dispatch:
@@ -37,7 +33,7 @@ jobs:
     - name: Install dependencies
       run: |
         pip install ./ai2-kit
-        pip install jupyter-book sphinx-apidoc
+        pip install jupyter-book
     
     - name: Sphinx APIDoc
       run: |
