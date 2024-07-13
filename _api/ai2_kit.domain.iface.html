@@ -458,7 +458,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -474,6 +476,38 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.iface.BaseCllContext"><code class="docutils literal notranslate"><span class="pre">BaseCllContext</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.iface.BaseCllContext.path_prefix"><code class="docutils literal notranslate"><span class="pre">BaseCllContext.path_prefix</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.iface.BaseCllContext.resource_manager"><code class="docutils literal notranslate"><span class="pre">BaseCllContext.resource_manager</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.iface.ICllExploreOutput"><code class="docutils literal notranslate"><span class="pre">ICllExploreOutput</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.iface.ICllExploreOutput.get_model_devi_dataset"><code class="docutils literal notranslate"><span class="pre">ICllExploreOutput.get_model_devi_dataset()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.iface.ICllLabelOutput"><code class="docutils literal notranslate"><span class="pre">ICllLabelOutput</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.iface.ICllLabelOutput.get_labeled_system_dataset"><code class="docutils literal notranslate"><span class="pre">ICllLabelOutput.get_labeled_system_dataset()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.iface.ICllSelectorOutput"><code class="docutils literal notranslate"><span class="pre">ICllSelectorOutput</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.iface.ICllSelectorOutput.get_model_devi_dataset"><code class="docutils literal notranslate"><span class="pre">ICllSelectorOutput.get_model_devi_dataset()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.iface.ICllSelectorOutput.get_new_explore_systems"><code class="docutils literal notranslate"><span class="pre">ICllSelectorOutput.get_new_explore_systems()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.iface.ICllSelectorOutput.get_passing_rate"><code class="docutils literal notranslate"><span class="pre">ICllSelectorOutput.get_passing_rate()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.iface.ICllTrainOutput"><code class="docutils literal notranslate"><span class="pre">ICllTrainOutput</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.iface.ICllTrainOutput.get_mlp_models"><code class="docutils literal notranslate"><span class="pre">ICllTrainOutput.get_mlp_models()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.iface.ICllTrainOutput.get_training_dataset"><code class="docutils literal notranslate"><span class="pre">ICllTrainOutput.get_training_dataset()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.iface.init_artifacts"><code class="docutils literal notranslate"><span class="pre">init_artifacts()</span></code></a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -483,8 +517,88 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="ai2-kit-domain-iface-module">
-<h1>ai2_kit.domain.iface module<a class="headerlink" href="#ai2-kit-domain-iface-module" title="Link to this heading">#</a></h1>
+  <section id="module-ai2_kit.domain.iface">
+<span id="ai2-kit-domain-iface-module"></span><h1>ai2_kit.domain.iface module<a class="headerlink" href="#module-ai2_kit.domain.iface" title="Link to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="ai2_kit.domain.iface.BaseCllContext">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ai2_kit.domain.iface.</span></span><span class="sig-name descname"><span class="pre">BaseCllContext</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path_prefix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resource_manager</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ai2_kit.core.resource_manager.html#ai2_kit.core.resource_manager.ResourceManager" title="ai2_kit.core.resource_manager.ResourceManager"><span class="pre">ai2_kit.core.resource_manager.ResourceManager</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ai2_kit/domain/iface.html#BaseCllContext"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ai2_kit.domain.iface.BaseCllContext" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ai2_kit.domain.iface.BaseCllContext.path_prefix">
+<span class="sig-name descname"><span class="pre">path_prefix</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ai2_kit.domain.iface.BaseCllContext.path_prefix" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ai2_kit.domain.iface.BaseCllContext.resource_manager">
+<span class="sig-name descname"><span class="pre">resource_manager</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="ai2_kit.core.resource_manager.html#ai2_kit.core.resource_manager.ResourceManager" title="ai2_kit.core.resource_manager.ResourceManager"><span class="pre">ResourceManager</span></a></em><a class="headerlink" href="#ai2_kit.domain.iface.BaseCllContext.resource_manager" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ai2_kit.domain.iface.ICllExploreOutput">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ai2_kit.domain.iface.</span></span><span class="sig-name descname"><span class="pre">ICllExploreOutput</span></span><a class="reference internal" href="../_modules/ai2_kit/domain/iface.html#ICllExploreOutput"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ai2_kit.domain.iface.ICllExploreOutput" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ai2_kit.domain.iface.ICllExploreOutput.get_model_devi_dataset">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_model_devi_dataset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="ai2_kit.core.artifact.html#ai2_kit.core.artifact.Artifact" title="ai2_kit.core.artifact.Artifact"><span class="pre">Artifact</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/ai2_kit/domain/iface.html#ICllExploreOutput.get_model_devi_dataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ai2_kit.domain.iface.ICllExploreOutput.get_model_devi_dataset" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ai2_kit.domain.iface.ICllLabelOutput">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ai2_kit.domain.iface.</span></span><span class="sig-name descname"><span class="pre">ICllLabelOutput</span></span><a class="reference internal" href="../_modules/ai2_kit/domain/iface.html#ICllLabelOutput"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ai2_kit.domain.iface.ICllLabelOutput" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ai2_kit.domain.iface.ICllLabelOutput.get_labeled_system_dataset">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_labeled_system_dataset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="ai2_kit.core.artifact.html#ai2_kit.core.artifact.Artifact" title="ai2_kit.core.artifact.Artifact"><span class="pre">Artifact</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/ai2_kit/domain/iface.html#ICllLabelOutput.get_labeled_system_dataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ai2_kit.domain.iface.ICllLabelOutput.get_labeled_system_dataset" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ai2_kit.domain.iface.ICllSelectorOutput">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ai2_kit.domain.iface.</span></span><span class="sig-name descname"><span class="pre">ICllSelectorOutput</span></span><a class="reference internal" href="../_modules/ai2_kit/domain/iface.html#ICllSelectorOutput"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ai2_kit.domain.iface.ICllSelectorOutput" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ai2_kit.domain.iface.ICllSelectorOutput.get_model_devi_dataset">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_model_devi_dataset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="ai2_kit.core.artifact.html#ai2_kit.core.artifact.Artifact" title="ai2_kit.core.artifact.Artifact"><span class="pre">Artifact</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/ai2_kit/domain/iface.html#ICllSelectorOutput.get_model_devi_dataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ai2_kit.domain.iface.ICllSelectorOutput.get_model_devi_dataset" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai2_kit.domain.iface.ICllSelectorOutput.get_new_explore_systems">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_new_explore_systems</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="ai2_kit.core.artifact.html#ai2_kit.core.artifact.Artifact" title="ai2_kit.core.artifact.Artifact"><span class="pre">Artifact</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/ai2_kit/domain/iface.html#ICllSelectorOutput.get_new_explore_systems"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ai2_kit.domain.iface.ICllSelectorOutput.get_new_explore_systems" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai2_kit.domain.iface.ICllSelectorOutput.get_passing_rate">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_passing_rate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="reference internal" href="../_modules/ai2_kit/domain/iface.html#ICllSelectorOutput.get_passing_rate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ai2_kit.domain.iface.ICllSelectorOutput.get_passing_rate" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ai2_kit.domain.iface.ICllTrainOutput">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ai2_kit.domain.iface.</span></span><span class="sig-name descname"><span class="pre">ICllTrainOutput</span></span><a class="reference internal" href="../_modules/ai2_kit/domain/iface.html#ICllTrainOutput"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ai2_kit.domain.iface.ICllTrainOutput" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ai2_kit.domain.iface.ICllTrainOutput.get_mlp_models">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_mlp_models</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="ai2_kit.core.artifact.html#ai2_kit.core.artifact.Artifact" title="ai2_kit.core.artifact.Artifact"><span class="pre">Artifact</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/ai2_kit/domain/iface.html#ICllTrainOutput.get_mlp_models"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ai2_kit.domain.iface.ICllTrainOutput.get_mlp_models" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai2_kit.domain.iface.ICllTrainOutput.get_training_dataset">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_training_dataset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="ai2_kit.core.artifact.html#ai2_kit.core.artifact.Artifact" title="ai2_kit.core.artifact.Artifact"><span class="pre">Artifact</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/ai2_kit/domain/iface.html#ICllTrainOutput.get_training_dataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ai2_kit.domain.iface.ICllTrainOutput.get_training_dataset" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ai2_kit.domain.iface.init_artifacts">
+<span class="sig-prename descclassname"><span class="pre">ai2_kit.domain.iface.</span></span><span class="sig-name descname"><span class="pre">init_artifacts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">artifacts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Mapping</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="ai2_kit.core.artifact.html#ai2_kit.core.artifact.Artifact" title="ai2_kit.core.artifact.Artifact"><span class="pre">Artifact</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ai2_kit/domain/iface.html#init_artifacts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ai2_kit.domain.iface.init_artifacts" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
 </section>
 
     <script type="text/x-thebe-config">
@@ -541,6 +655,45 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.iface.BaseCllContext"><code class="docutils literal notranslate"><span class="pre">BaseCllContext</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.iface.BaseCllContext.path_prefix"><code class="docutils literal notranslate"><span class="pre">BaseCllContext.path_prefix</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.iface.BaseCllContext.resource_manager"><code class="docutils literal notranslate"><span class="pre">BaseCllContext.resource_manager</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.iface.ICllExploreOutput"><code class="docutils literal notranslate"><span class="pre">ICllExploreOutput</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.iface.ICllExploreOutput.get_model_devi_dataset"><code class="docutils literal notranslate"><span class="pre">ICllExploreOutput.get_model_devi_dataset()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.iface.ICllLabelOutput"><code class="docutils literal notranslate"><span class="pre">ICllLabelOutput</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.iface.ICllLabelOutput.get_labeled_system_dataset"><code class="docutils literal notranslate"><span class="pre">ICllLabelOutput.get_labeled_system_dataset()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.iface.ICllSelectorOutput"><code class="docutils literal notranslate"><span class="pre">ICllSelectorOutput</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.iface.ICllSelectorOutput.get_model_devi_dataset"><code class="docutils literal notranslate"><span class="pre">ICllSelectorOutput.get_model_devi_dataset()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.iface.ICllSelectorOutput.get_new_explore_systems"><code class="docutils literal notranslate"><span class="pre">ICllSelectorOutput.get_new_explore_systems()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.iface.ICllSelectorOutput.get_passing_rate"><code class="docutils literal notranslate"><span class="pre">ICllSelectorOutput.get_passing_rate()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.iface.ICllTrainOutput"><code class="docutils literal notranslate"><span class="pre">ICllTrainOutput</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.iface.ICllTrainOutput.get_mlp_models"><code class="docutils literal notranslate"><span class="pre">ICllTrainOutput.get_mlp_models()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.iface.ICllTrainOutput.get_training_dataset"><code class="docutils literal notranslate"><span class="pre">ICllTrainOutput.get_training_dataset()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.iface.init_artifacts"><code class="docutils literal notranslate"><span class="pre">init_artifacts()</span></code></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

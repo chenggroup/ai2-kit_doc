@@ -458,7 +458,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -474,6 +476,29 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.tool.ase.AseTool"><code class="docutils literal notranslate"><span class="pre">AseTool</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.tool.ase.AseTool.delete_atoms"><code class="docutils literal notranslate"><span class="pre">AseTool.delete_atoms()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.tool.ase.AseTool.read"><code class="docutils literal notranslate"><span class="pre">AseTool.read()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.tool.ase.AseTool.sample"><code class="docutils literal notranslate"><span class="pre">AseTool.sample()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.tool.ase.AseTool.set_by_ref"><code class="docutils literal notranslate"><span class="pre">AseTool.set_by_ref()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.tool.ase.AseTool.set_cell"><code class="docutils literal notranslate"><span class="pre">AseTool.set_cell()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.tool.ase.AseTool.set_pbc"><code class="docutils literal notranslate"><span class="pre">AseTool.set_pbc()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.tool.ase.AseTool.size"><code class="docutils literal notranslate"><span class="pre">AseTool.size()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.tool.ase.AseTool.slice"><code class="docutils literal notranslate"><span class="pre">AseTool.slice()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.tool.ase.AseTool.to_dpdata"><code class="docutils literal notranslate"><span class="pre">AseTool.to_dpdata()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.tool.ase.AseTool.write"><code class="docutils literal notranslate"><span class="pre">AseTool.write()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.tool.ase.AseTool.write_dplr_lammps_data"><code class="docutils literal notranslate"><span class="pre">AseTool.write_dplr_lammps_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.tool.ase.AseTool.write_each_frame"><code class="docutils literal notranslate"><span class="pre">AseTool.write_each_frame</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.tool.ase.AseTool.write_frames"><code class="docutils literal notranslate"><span class="pre">AseTool.write_frames()</span></code></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -483,8 +508,142 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="ai2-kit-tool-ase-module">
-<h1>ai2_kit.tool.ase module<a class="headerlink" href="#ai2-kit-tool-ase-module" title="Link to this heading">#</a></h1>
+  <section id="module-ai2_kit.tool.ase">
+<span id="ai2-kit-tool-ase-module"></span><h1>ai2_kit.tool.ase module<a class="headerlink" href="#module-ai2_kit.tool.ase" title="Link to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="ai2_kit.tool.ase.AseTool">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ai2_kit.tool.ase.</span></span><span class="sig-name descname"><span class="pre">AseTool</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atoms_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Atoms</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ai2_kit/tool/ase.html#AseTool"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ai2_kit.tool.ase.AseTool" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ai2_kit.tool.ase.AseTool.delete_atoms">
+<span class="sig-name descname"><span class="pre">delete_atoms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ai2_kit/tool/ase.html#AseTool.delete_atoms"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ai2_kit.tool.ase.AseTool.delete_atoms" title="Link to this definition">#</a></dt>
+<dd><p>delete atoms by id or list of id</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> – id or list of id</p></li>
+<li><p><strong>start_id</strong> – the start id of first item, for example, in LAMMPS the id of first item is 1, in ASE it is 0</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai2_kit.tool.ase.AseTool.read">
+<span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">file_path_or_glob</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ai2_kit/tool/ase.html#AseTool.read"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ai2_kit.tool.ase.AseTool.read" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai2_kit.tool.ase.AseTool.sample">
+<span class="sig-name descname"><span class="pre">sample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'even'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'random'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'truncate'</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'even'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ai2_kit/tool/ase.html#AseTool.sample"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ai2_kit.tool.ase.AseTool.sample" title="Link to this definition">#</a></dt>
+<dd><p>sample data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>size</strong> – size of sample, if size is larger than data size, return all data</p></li>
+<li><p><strong>method</strong> – method to sample, can be ‘even’, ‘random’, ‘truncate’, default is ‘even’</p></li>
+<li><p><strong>seed</strong> – seed for random sample, only used when method is ‘random’</p></li>
+</ul>
+</dd>
+</dl>
+<p>Note that by default the seed is length of input list,
+if you want to generate different sample each time, you should set random seed manually</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai2_kit.tool.ase.AseTool.set_by_ref">
+<span class="sig-name descname"><span class="pre">set_by_ref</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ref_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ai2_kit/tool/ase.html#AseTool.set_by_ref"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ai2_kit.tool.ase.AseTool.set_by_ref" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai2_kit.tool.ase.AseTool.set_cell">
+<span class="sig-name descname"><span class="pre">set_cell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale_atoms</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apply_constraint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ai2_kit/tool/ase.html#AseTool.set_cell"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ai2_kit.tool.ase.AseTool.set_cell" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai2_kit.tool.ase.AseTool.set_pbc">
+<span class="sig-name descname"><span class="pre">set_pbc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pbc</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ai2_kit/tool/ase.html#AseTool.set_pbc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ai2_kit.tool.ase.AseTool.set_pbc" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai2_kit.tool.ase.AseTool.size">
+<span class="sig-name descname"><span class="pre">size</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ai2_kit/tool/ase.html#AseTool.size"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ai2_kit.tool.ase.AseTool.size" title="Link to this definition">#</a></dt>
+<dd><p>size of loaded data</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai2_kit.tool.ase.AseTool.slice">
+<span class="sig-name descname"><span class="pre">slice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ai2_kit/tool/ase.html#AseTool.slice"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ai2_kit.tool.ase.AseTool.slice" title="Link to this definition">#</a></dt>
+<dd><p>slice systems by python slice expression, for example
+<cite>10:</cite>, <cite>:10</cite>, <cite>::2</cite>, etc</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> – start index</p></li>
+<li><p><strong>stop</strong> – stop index</p></li>
+<li><p><strong>step</strong> – step</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai2_kit.tool.ase.AseTool.to_dpdata">
+<span class="sig-name descname"><span class="pre">to_dpdata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">labeled</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ai2_kit/tool/ase.html#AseTool.to_dpdata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ai2_kit.tool.ase.AseTool.to_dpdata" title="Link to this definition">#</a></dt>
+<dd><p>convert to dpdata format and use dpdata tool to handle</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>labeled</strong> – if True, use dpdata.LabeledSystem, else use dpdata.System</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai2_kit.tool.ase.AseTool.write">
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ai2_kit/tool/ase.html#AseTool.write"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ai2_kit.tool.ase.AseTool.write" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai2_kit.tool.ase.AseTool.write_dplr_lammps_data">
+<span class="sig-name descname"><span class="pre">write_dplr_lammps_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type_map</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sel_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sys_charge_map</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_charge_map</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ai2_kit/tool/ase.html#AseTool.write_dplr_lammps_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ai2_kit.tool.ase.AseTool.write_dplr_lammps_data" title="Link to this definition">#</a></dt>
+<dd><p>write atoms to LAMMPS data file for DPLR
+the naming convention of params follows Deepmd-Kit’s</p>
+<p>about dplr: <a class="reference external" href="https://docs.deepmodeling.com/projects/deepmd/en/master/model/dplr.html">https://docs.deepmodeling.com/projects/deepmd/en/master/model/dplr.html</a>
+about fitting tensor: <a class="reference external" href="https://docs.deepmodeling.com/projects/deepmd/en/master/model/train-fitting-tensor.html">https://docs.deepmodeling.com/projects/deepmd/en/master/model/train-fitting-tensor.html</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> – the filename of LAMMPS data file, use {i} to represent the index, for example, ‘frame_{i}.lammps.data’</p></li>
+<li><p><strong>type_map</strong> – the type map of atom type, for example, [O,H]</p></li>
+<li><p><strong>sel_type</strong> – the selected type of atom, for example, [0] means atom type 0, aka O is selected</p></li>
+<li><p><strong>sys_charge_map</strong> – the charge map of atom in system, for example, [6, 1]</p></li>
+<li><p><strong>model_charge_map</strong> – the charge map of atom in model, for example, [-8]</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ai2_kit.tool.ase.AseTool.write_each_frame">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">write_each_frame</span></span><a class="headerlink" href="#ai2_kit.tool.ase.AseTool.write_each_frame" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai2_kit.tool.ase.AseTool.write_frames">
+<span class="sig-name descname"><span class="pre">write_frames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ai2_kit/tool/ase.html#AseTool.write_frames"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ai2_kit.tool.ase.AseTool.write_frames" title="Link to this definition">#</a></dt>
+<dd><p>write each frame to a separate file, useful to write to format only support single frame, POSCAR for example</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> – the filename template, use {i} to represent the index, for example, ‘frame_{i}.xyz’</p></li>
+<li><p><strong>kwargs</strong> – other arguments for ase.io.write</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 
     <script type="text/x-thebe-config">
@@ -541,6 +700,36 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.tool.ase.AseTool"><code class="docutils literal notranslate"><span class="pre">AseTool</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.tool.ase.AseTool.delete_atoms"><code class="docutils literal notranslate"><span class="pre">AseTool.delete_atoms()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.tool.ase.AseTool.read"><code class="docutils literal notranslate"><span class="pre">AseTool.read()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.tool.ase.AseTool.sample"><code class="docutils literal notranslate"><span class="pre">AseTool.sample()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.tool.ase.AseTool.set_by_ref"><code class="docutils literal notranslate"><span class="pre">AseTool.set_by_ref()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.tool.ase.AseTool.set_cell"><code class="docutils literal notranslate"><span class="pre">AseTool.set_cell()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.tool.ase.AseTool.set_pbc"><code class="docutils literal notranslate"><span class="pre">AseTool.set_pbc()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.tool.ase.AseTool.size"><code class="docutils literal notranslate"><span class="pre">AseTool.size()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.tool.ase.AseTool.slice"><code class="docutils literal notranslate"><span class="pre">AseTool.slice()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.tool.ase.AseTool.to_dpdata"><code class="docutils literal notranslate"><span class="pre">AseTool.to_dpdata()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.tool.ase.AseTool.write"><code class="docutils literal notranslate"><span class="pre">AseTool.write()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.tool.ase.AseTool.write_dplr_lammps_data"><code class="docutils literal notranslate"><span class="pre">AseTool.write_dplr_lammps_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.tool.ase.AseTool.write_each_frame"><code class="docutils literal notranslate"><span class="pre">AseTool.write_each_frame</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.tool.ase.AseTool.write_frames"><code class="docutils literal notranslate"><span class="pre">AseTool.write_frames()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

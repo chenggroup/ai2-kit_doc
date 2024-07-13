@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ai2_kit.tool.batch &#8212; ai2-kit Reference</title>
+    <title>ai2_kit.core.resource_manager &#8212; ai2-kit Reference</title>
   
   
   
@@ -56,7 +56,7 @@
     <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/ai2_kit/tool/batch';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/ai2_kit/core/resource_manager';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -356,7 +356,7 @@
       
       
       
-      <li><a href="https://github.com/chenggroup/ai2-kit/issues/new?title=Issue%20on%20page%20%2F_modules/ai2_kit/tool/batch.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/chenggroup/ai2-kit/issues/new?title=Issue%20on%20page%20%2F_modules/ai2_kit/core/resource_manager.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -434,159 +434,102 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <h1>Source code for ai2_kit.tool.batch</h1><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">import</span> <span class="nn">shutil</span>
-<span class="kn">import</span> <span class="nn">shlex</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+  <h1>Source code for ai2_kit.core.resource_manager</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Union</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Sequence</span>
+<span class="kn">import</span> <span class="nn">copy</span>
 
-<span class="kn">from</span> <span class="nn">ai2_kit.core.util</span> <span class="kn">import</span> <span class="n">ensure_dir</span><span class="p">,</span> <span class="n">expand_globs</span><span class="p">,</span> <span class="n">list_split</span>
-<span class="kn">from</span> <span class="nn">ai2_kit.core.log</span> <span class="kn">import</span> <span class="n">get_logger</span>
-
-<span class="n">logger</span> <span class="o">=</span> <span class="n">get_logger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">.artifact</span> <span class="kn">import</span> <span class="n">Artifact</span><span class="p">,</span> <span class="n">ArtifactMap</span>
+<span class="kn">from</span> <span class="nn">.executor</span> <span class="kn">import</span> <span class="n">Executor</span><span class="p">,</span> <span class="n">ExecutorMap</span><span class="p">,</span> <span class="n">create_executor</span>
 
 
-<div class="viewcode-block" id="BatchTool">
-<a class="viewcode-back" href="../../../_api/ai2_kit.tool.batch.html#ai2_kit.tool.batch.BatchTool">[docs]</a>
-<span class="k">class</span> <span class="nc">BatchTool</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    A toolkit to help generate batch scripts.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="n">ArtifactOrKey</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="n">Artifact</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span>
 
-<div class="viewcode-block" id="BatchTool.run_cmd">
-<a class="viewcode-back" href="../../../_api/ai2_kit.tool.batch.html#ai2_kit.tool.batch.BatchTool.run_cmd">[docs]</a>
-    <span class="k">def</span> <span class="nf">run_cmd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">work_dirs</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">cmd</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Run command in each work directory.</span>
+<div class="viewcode-block" id="ResourceManager">
+<a class="viewcode-back" href="../../../_api/ai2_kit.core.resource_manager.html#ai2_kit.core.resource_manager.ResourceManager">[docs]</a>
+<span class="k">class</span> <span class="nc">ResourceManager</span><span class="p">:</span>
 
-<span class="sd">        :param work_dirs: path or glob of work directories</span>
-<span class="sd">        :param cmd: command to run, use {work_dir} to represent the work directory</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">paths</span> <span class="o">=</span> <span class="n">expand_globs</span><span class="p">(</span><span class="n">work_dirs</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">paths</span><span class="p">:</span>
-            <span class="k">assert</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">path</span><span class="p">),</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s1"> is not a directory&#39;</span>
-            <span class="n">_cmd</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;cd </span><span class="si">{</span><span class="n">shlex</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="si">}</span><span class="s2"> &amp;&amp; </span><span class="si">{</span><span class="n">cmd</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">work_dir</span><span class="o">=</span><span class="n">path</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
-            <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="n">_cmd</span><span class="p">)</span>
-            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Run command: </span><span class="si">{</span><span class="n">_cmd</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span></div>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">default_executor</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_executor</span><span class="p">()</span>
 
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                 <span class="n">executor_configs</span><span class="p">:</span> <span class="n">ExecutorMap</span><span class="p">,</span>
+                 <span class="n">artifacts</span><span class="p">:</span> <span class="n">ArtifactMap</span><span class="p">,</span>
+                 <span class="n">default_executor</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                 <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 
-<div class="viewcode-block" id="BatchTool.map_path">
-<a class="viewcode-back" href="../../../_api/ai2_kit.tool.batch.html#ai2_kit.tool.batch.BatchTool.map_path">[docs]</a>
-    <span class="k">def</span> <span class="nf">map_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">sources</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">target</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">copy</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Map source files or directory to target path, use link by default.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_executor_configs</span> <span class="o">=</span> <span class="n">executor_configs</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_default_executor_name</span> <span class="o">=</span> <span class="n">default_executor</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_executors</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Executor</span><span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+        <span class="c1"># runtime check to ensure quick failure</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">default_executor</span>
 
-<span class="sd">        :param sources: path or glob of source files or directories</span>
-<span class="sd">        :param target: target path, use {i} to represent the index of the source path,</span>
-<span class="sd">        or {basename} to represent the basename of the source path</span>
-<span class="sd">        :param copy: use copy instead of link</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">paths</span> <span class="o">=</span> <span class="n">expand_globs</span><span class="p">(</span><span class="n">sources</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">path</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">paths</span><span class="p">):</span>
-            <span class="n">target_path</span> <span class="o">=</span> <span class="n">target</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">basename</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">path</span><span class="p">))</span>
-            <span class="n">ensure_dir</span><span class="p">(</span><span class="n">target_path</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">copy</span><span class="p">:</span>
-                <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
-                    <span class="n">shutil</span><span class="o">.</span><span class="n">copytree</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">target_path</span><span class="p">)</span>
-                    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Copy directory </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s1"> to </span><span class="si">{</span><span class="n">target_path</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-                <span class="k">else</span><span class="p">:</span>
-                    <span class="n">shutil</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">target_path</span><span class="p">)</span>
-                    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Copy file </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s1"> to </span><span class="si">{</span><span class="n">target_path</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-                <span class="n">os</span><span class="o">.</span><span class="n">symlink</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">target_path</span><span class="p">)</span>
-                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Link </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s1"> to </span><span class="si">{</span><span class="n">target_path</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span></div>
+        <span class="c1"># fill in default values</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">artifact</span> <span class="ow">in</span> <span class="n">artifacts</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">artifact</span><span class="o">.</span><span class="n">executor</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">artifact</span><span class="o">.</span><span class="n">executor</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">default_executor</span><span class="o">.</span><span class="n">name</span>
+            <span class="k">if</span> <span class="n">artifact</span><span class="o">.</span><span class="n">key</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">artifact</span><span class="o">.</span><span class="n">key</span> <span class="o">=</span> <span class="n">key</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_artifacts</span> <span class="o">=</span> <span class="n">artifacts</span>
+
+<div class="viewcode-block" id="ResourceManager.get_executor">
+<a class="viewcode-back" href="../../../_api/ai2_kit.core.resource_manager.html#ai2_kit.core.resource_manager.ResourceManager.get_executor">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_executor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Executor</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_executor_name</span>
+
+        <span class="n">config</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_executor_configs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">config</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s1">&#39;Executor with name </span><span class="si">{}</span><span class="s1"> is not found!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_executors</span><span class="p">:</span>
+            <span class="n">executor</span> <span class="o">=</span> <span class="n">create_executor</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="n">executor</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_executors</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">executor</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_executors</span><span class="p">[</span><span class="n">name</span><span class="p">]</span></div>
 
 
-<div class="viewcode-block" id="BatchTool.gen_batches">
-<a class="viewcode-back" href="../../../_api/ai2_kit.tool.batch.html#ai2_kit.tool.batch.BatchTool.gen_batches">[docs]</a>
-    <span class="k">def</span> <span class="nf">gen_batches</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">work_dirs</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-                    <span class="n">out</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-                    <span class="n">cmd</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                    <span class="n">concurrency</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
-                    <span class="n">header_file</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                    <span class="n">suppress_error</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-                    <span class="n">checkpoint</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
-                    <span class="n">checkpoint_file</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;done.ckpt&#39;</span><span class="p">,</span>
-                    <span class="n">rel_path</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-                    <span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Generate batch scripts for each work directory.</span>
-
-<span class="sd">        This command will apply `cmd` to each work directory and generate batch scripts according to `concurrency`.</span>
-
-<span class="sd">        :param work_dirs: path or glob of work directories</span>
-<span class="sd">        :param out: path to write batch scripts, use {i} to represent the index of concurrent job</span>
-<span class="sd">        :param cmd: command to run, if None, will read from stdin, use {word_dir} to represent the word directory,</span>
-<span class="sd">        use {i} to represent the index of concurrent job</span>
-<span class="sd">        :param concurrency: number of concurrent jobs, decide the number of batch scripts to generate, if 0, will generate one batch script for each work directory</span>
-<span class="sd">        :param header_file: path to header file, will be added to the beginning of each batch script</span>
-<span class="sd">        :param suppress_error: if True, will add `set -e` to the beginning of each batch script</span>
-<span class="sd">        :param checkpoint: if True, will add checkpoint to each batch script, and skip the work directory if checkpoint exists</span>
-<span class="sd">        :param checkpoint_file: checkpoint file name</span>
-<span class="sd">        :param rel_path: if True, will use relative path in batch script</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">_work_dirs</span> <span class="o">=</span> <span class="n">expand_globs</span><span class="p">(</span><span class="n">work_dirs</span><span class="p">)</span>
-        <span class="c1"># read cmd</span>
-        <span class="k">if</span> <span class="n">cmd</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">cmd</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-
-        <span class="c1"># read template</span>
-        <span class="n">header</span> <span class="o">=</span> <span class="s1">&#39;#!/bin/bash&#39;</span>
-        <span class="k">if</span> <span class="n">header_file</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">header_file</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-                <span class="n">header</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-
-        <span class="c1"># generate batch scripts</span>
-        <span class="k">if</span> <span class="n">concurrency</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">concurrency</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">_work_dirs</span><span class="p">)</span>
-
-        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">job_group</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">list_split</span><span class="p">(</span><span class="n">_work_dirs</span><span class="p">,</span> <span class="n">concurrency</span><span class="p">)):</span>
-            <span class="n">batch</span> <span class="o">=</span> <span class="p">[</span> <span class="n">header</span> <span class="p">]</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="n">suppress_error</span><span class="p">:</span>
-                <span class="n">batch</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;set -e&#39;</span><span class="p">)</span>
-
-            <span class="n">batch</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;for work_dir in </span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">)</span>
-            <span class="c1"># generate batch script</span>
-            <span class="k">for</span> <span class="n">work_dir</span> <span class="ow">in</span> <span class="n">job_group</span><span class="p">:</span>
-                <span class="k">assert</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">work_dir</span><span class="p">),</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">work_dir</span><span class="si">}</span><span class="s1"> is not a directory&#39;</span>
-                <span class="k">if</span> <span class="ow">not</span> <span class="n">rel_path</span><span class="p">:</span>
-                    <span class="n">work_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">work_dir</span><span class="p">)</span>
-                <span class="n">batch</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  </span><span class="si">{</span><span class="n">shlex</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="n">work_dir</span><span class="p">)</span><span class="si">}</span><span class="s1"> </span><span class="se">\\</span><span class="s1">&#39;</span><span class="p">)</span>
-            <span class="n">batch</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
-                <span class="sa">f</span><span class="s1">&#39;  ; do&#39;</span><span class="p">,</span>
-                <span class="sa">f</span><span class="s1">&#39;    pushd $work_dir&#39;</span><span class="p">,</span>
-            <span class="p">])</span>
-            <span class="k">if</span> <span class="n">checkpoint</span><span class="p">:</span>
-                <span class="n">batch</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
-                    <span class="sa">f</span><span class="s1">&#39;    if [ -f </span><span class="si">{</span><span class="n">checkpoint_file</span><span class="si">}</span><span class="s1"> ]; then&#39;</span><span class="p">,</span>
-                    <span class="sa">f</span><span class="s1">&#39;      echo &quot;hit checkpoint, skip&quot;&#39;</span><span class="p">,</span>
-                    <span class="sa">f</span><span class="s1">&#39;      continue&#39;</span><span class="p">,</span>
-                    <span class="sa">f</span><span class="s1">&#39;    fi&#39;</span><span class="p">,</span>
-                <span class="p">])</span>
-            <span class="n">batch</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
-                <span class="sa">f</span><span class="s1">&#39;    </span><span class="si">{</span><span class="n">cmd</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
-                <span class="sa">f</span><span class="s1">&#39;    touch </span><span class="si">{</span><span class="n">checkpoint_file</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
-                <span class="sa">f</span><span class="s1">&#39;    popd&#39;</span><span class="p">,</span>
-                <span class="sa">f</span><span class="s1">&#39;  done&#39;</span>
-            <span class="p">])</span>
-
-            <span class="c1"># write batch script</span>
-            <span class="n">out_path</span> <span class="o">=</span> <span class="n">out</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
-            <span class="n">ensure_dir</span><span class="p">(</span><span class="n">out_path</span><span class="p">)</span>
-            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">out_path</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">batch</span><span class="p">))</span>
-            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Write batch script to </span><span class="si">{</span><span class="n">out_path</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span></div>
+<div class="viewcode-block" id="ResourceManager.get_artifact">
+<a class="viewcode-back" href="../../../_api/ai2_kit.core.resource_manager.html#ai2_kit.core.resource_manager.ResourceManager.get_artifact">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_artifact</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Artifact</span><span class="p">:</span>
+        <span class="c1"># raise error it is by designed, ensure quick failure</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_artifacts</span><span class="p">[</span><span class="n">key</span><span class="p">]</span></div>
 
 
-    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-        <span class="c1"># suppress fire help message</span>
-        <span class="k">return</span> <span class="s1">&#39;&#39;</span></div>
+<div class="viewcode-block" id="ResourceManager.get_artifacts">
+<a class="viewcode-back" href="../../../_api/ai2_kit.core.resource_manager.html#ai2_kit.core.resource_manager.ResourceManager.get_artifacts">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_artifacts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keys</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Artifact</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">get_artifact</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">]</span></div>
 
+
+<div class="viewcode-block" id="ResourceManager.resolve_artifact">
+<a class="viewcode-back" href="../../../_api/ai2_kit.core.resource_manager.html#ai2_kit.core.resource_manager.ResourceManager.resolve_artifact">[docs]</a>
+    <span class="k">def</span> <span class="nf">resolve_artifact</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">artifact</span><span class="p">:</span> <span class="n">ArtifactOrKey</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Artifact</span><span class="p">]:</span>
+        <span class="c1"># TODO: support cross executor data resolve in the future</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">artifact</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">artifact</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_artifact</span><span class="p">(</span><span class="n">artifact</span><span class="p">)</span>
+        <span class="n">paths</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">default_executor</span><span class="o">.</span><span class="n">resolve_artifact</span><span class="p">(</span><span class="n">artifact</span><span class="p">)</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="n">Artifact</span><span class="o">.</span><span class="n">of</span><span class="p">(</span>
+            <span class="n">url</span><span class="o">=</span><span class="n">path</span><span class="p">,</span>
+            <span class="nb">format</span><span class="o">=</span><span class="n">artifact</span><span class="o">.</span><span class="n">format</span><span class="p">,</span>
+            <span class="n">includes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># has been consumed</span>
+            <span class="n">attrs</span><span class="o">=</span><span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">artifact</span><span class="o">.</span><span class="n">attrs</span><span class="p">),</span>
+            <span class="n">executor</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">default_executor</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+        <span class="p">)</span> <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">paths</span><span class="p">]</span>
+
+        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;artifact </span><span class="si">{</span><span class="n">artifact</span><span class="si">}</span><span class="s1"> is invalid&#39;</span>
+        <span class="k">return</span> <span class="n">result</span></div>
+
+
+<div class="viewcode-block" id="ResourceManager.resolve_artifacts">
+<a class="viewcode-back" href="../../../_api/ai2_kit.core.resource_manager.html#ai2_kit.core.resource_manager.ResourceManager.resolve_artifacts">[docs]</a>
+    <span class="k">def</span> <span class="nf">resolve_artifacts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">artifacts</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">ArtifactOrKey</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Artifact</span><span class="p">]:</span>
+        <span class="c1"># flat map</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">artifacts</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">resolve_artifact</span><span class="p">(</span><span class="n">a</span><span class="p">)]</span></div>
+</div>
 
 </pre></div>
 
