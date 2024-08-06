@@ -33,7 +33,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -453,7 +453,16 @@ document.write(`
     <span class="n">constant</span> <span class="k">as</span> <span class="n">const</span><span class="p">,</span>
     <span class="n">updater</span><span class="p">,</span>
     <span class="n">anyware</span><span class="p">,</span>
+
+    <span class="n">lammps</span> <span class="k">as</span> <span class="n">_lammps</span><span class="p">,</span>
+    <span class="n">lasp</span> <span class="k">as</span> <span class="n">_lasp</span><span class="p">,</span>
+    <span class="n">cp2k</span> <span class="k">as</span> <span class="n">_cp2k</span><span class="p">,</span>
+    <span class="n">vasp</span> <span class="k">as</span> <span class="n">_vasp</span><span class="p">,</span>
+    <span class="n">anyware</span> <span class="k">as</span> <span class="n">_anyware</span><span class="p">,</span>
 <span class="p">)</span>
+
+
+
 
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Any</span>
 <span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
@@ -482,16 +491,16 @@ document.write(`
 <div class="viewcode-block" id="CllWorkflowExecutorConfig.Context.Explore">
 <a class="viewcode-back" href="../../../_api/ai2_kit.workflow.cll_mlp.html#ai2_kit.workflow.cll_mlp.CllWorkflowExecutorConfig.Context.Explore">[docs]</a>
         <span class="k">class</span> <span class="nc">Explore</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
-            <span class="n">lammps</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">lammps</span><span class="o">.</span><span class="n">CllLammpsContextConfig</span><span class="p">]</span>
-            <span class="n">lasp</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">lasp</span><span class="o">.</span><span class="n">CllLaspContextConfig</span><span class="p">]</span>
-            <span class="n">anyware</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">anyware</span><span class="o">.</span><span class="n">AnywareContextConfig</span><span class="p">]</span></div>
+            <span class="n">lammps</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">_lammps</span><span class="o">.</span><span class="n">CllLammpsContextConfig</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">lasp</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">_lasp</span><span class="o">.</span><span class="n">CllLaspContextConfig</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">anyware</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">_anyware</span><span class="o">.</span><span class="n">AnywareContextConfig</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span></div>
 
 
 <div class="viewcode-block" id="CllWorkflowExecutorConfig.Context.Label">
 <a class="viewcode-back" href="../../../_api/ai2_kit.workflow.cll_mlp.html#ai2_kit.workflow.cll_mlp.CllWorkflowExecutorConfig.Context.Label">[docs]</a>
         <span class="k">class</span> <span class="nc">Label</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
-            <span class="n">cp2k</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">cp2k</span><span class="o">.</span><span class="n">CllCp2kContextConfig</span><span class="p">]</span>
-            <span class="n">vasp</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">vasp</span><span class="o">.</span><span class="n">CllVaspContextConfig</span><span class="p">]</span></div>
+            <span class="n">cp2k</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">_cp2k</span><span class="o">.</span><span class="n">CllCp2kContextConfig</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">vasp</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">_vasp</span><span class="o">.</span><span class="n">CllVaspContextConfig</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span></div>
 
 
         <span class="n">train</span><span class="p">:</span> <span class="n">Train</span>
@@ -511,7 +520,7 @@ document.write(`
     <span class="k">class</span> <span class="nc">General</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
         <span class="n">type_map</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
         <span class="n">mass_map</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span>
-        <span class="n">sel_type</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span>
+        <span class="n">sel_type</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
 
         <span class="n">max_iters</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span>
         <span class="n">mode</span><span class="p">:</span> <span class="n">iface</span><span class="o">.</span><span class="n">TRAINING_MODE</span> <span class="o">=</span> <span class="s1">&#39;default&#39;</span>
@@ -521,8 +530,8 @@ document.write(`
 <div class="viewcode-block" id="WorkflowConfig.Label">
 <a class="viewcode-back" href="../../../_api/ai2_kit.workflow.cll_mlp.html#ai2_kit.workflow.cll_mlp.WorkflowConfig.Label">[docs]</a>
     <span class="k">class</span> <span class="nc">Label</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
-        <span class="n">cp2k</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">cp2k</span><span class="o">.</span><span class="n">CllCp2kInputConfig</span><span class="p">]</span>
-        <span class="n">vasp</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">vasp</span><span class="o">.</span><span class="n">CllVaspInputConfig</span><span class="p">]</span></div>
+        <span class="n">cp2k</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">_cp2k</span><span class="o">.</span><span class="n">CllCp2kInputConfig</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">vasp</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">_vasp</span><span class="o">.</span><span class="n">CllVaspInputConfig</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span></div>
 
 
 <div class="viewcode-block" id="WorkflowConfig.Train">
@@ -534,9 +543,9 @@ document.write(`
 <div class="viewcode-block" id="WorkflowConfig.Explore">
 <a class="viewcode-back" href="../../../_api/ai2_kit.workflow.cll_mlp.html#ai2_kit.workflow.cll_mlp.WorkflowConfig.Explore">[docs]</a>
     <span class="k">class</span> <span class="nc">Explore</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
-        <span class="n">lammps</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">lammps</span><span class="o">.</span><span class="n">CllLammpsInputConfig</span><span class="p">]</span>
-        <span class="n">lasp</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">lasp</span><span class="o">.</span><span class="n">CllLaspInputConfig</span><span class="p">]</span>
-        <span class="n">anyware</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">anyware</span><span class="o">.</span><span class="n">AnywareConfig</span><span class="p">]</span></div>
+        <span class="n">lammps</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">_lammps</span><span class="o">.</span><span class="n">CllLammpsInputConfig</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">lasp</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">_lasp</span><span class="o">.</span><span class="n">CllLaspInputConfig</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">anyware</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">_anyware</span><span class="o">.</span><span class="n">AnywareConfig</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span></div>
 
 
 <div class="viewcode-block" id="WorkflowConfig.Select">

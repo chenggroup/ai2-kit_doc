@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -487,6 +487,9 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.vasp.CllVaspContextConfig"><code class="docutils literal notranslate"><span class="pre">CllVaspContextConfig</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.vasp.CllVaspContextConfig.concurrency"><code class="docutils literal notranslate"><span class="pre">CllVaspContextConfig.concurrency</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.vasp.CllVaspContextConfig.model_computed_fields"><code class="docutils literal notranslate"><span class="pre">CllVaspContextConfig.model_computed_fields</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.vasp.CllVaspContextConfig.model_config"><code class="docutils literal notranslate"><span class="pre">CllVaspContextConfig.model_config</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.vasp.CllVaspContextConfig.model_fields"><code class="docutils literal notranslate"><span class="pre">CllVaspContextConfig.model_fields</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.vasp.CllVaspContextConfig.script_template"><code class="docutils literal notranslate"><span class="pre">CllVaspContextConfig.script_template</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.vasp.CllVaspContextConfig.vasp_cmd"><code class="docutils literal notranslate"><span class="pre">CllVaspContextConfig.vasp_cmd</span></code></a></li>
 </ul>
@@ -504,6 +507,9 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.vasp.CllVaspInputConfig.kpoints_template"><code class="docutils literal notranslate"><span class="pre">CllVaspInputConfig.kpoints_template</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.vasp.CllVaspInputConfig.limit"><code class="docutils literal notranslate"><span class="pre">CllVaspInputConfig.limit</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.vasp.CllVaspInputConfig.limit_method"><code class="docutils literal notranslate"><span class="pre">CllVaspInputConfig.limit_method</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.vasp.CllVaspInputConfig.model_computed_fields"><code class="docutils literal notranslate"><span class="pre">CllVaspInputConfig.model_computed_fields</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.vasp.CllVaspInputConfig.model_config"><code class="docutils literal notranslate"><span class="pre">CllVaspInputConfig.model_config</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.vasp.CllVaspInputConfig.model_fields"><code class="docutils literal notranslate"><span class="pre">CllVaspInputConfig.model_fields</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.vasp.CllVaspInputConfig.potcar_source"><code class="docutils literal notranslate"><span class="pre">CllVaspInputConfig.potcar_source</span></code></a></li>
 </ul>
 </li>
@@ -546,6 +552,26 @@ document.write(`
 <dt class="sig sig-object py" id="ai2_kit.domain.vasp.CllVaspContextConfig.concurrency">
 <span class="sig-name descname"><span class="pre">concurrency</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ai2_kit.domain.vasp.CllVaspContextConfig.concurrency" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ai2_kit.domain.vasp.CllVaspContextConfig.model_computed_fields">
+<span class="sig-name descname"><span class="pre">model_computed_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ComputedFieldInfo</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#ai2_kit.domain.vasp.CllVaspContextConfig.model_computed_fields" title="Link to this definition">#</a></dt>
+<dd><p>A dictionary of computed field names and their corresponding <cite>ComputedFieldInfo</cite> objects.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ai2_kit.domain.vasp.CllVaspContextConfig.model_config">
+<span class="sig-name descname"><span class="pre">model_config</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">ConfigDict</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'extra':</span> <span class="pre">'forbid'}</span></em><a class="headerlink" href="#ai2_kit.domain.vasp.CllVaspContextConfig.model_config" title="Link to this definition">#</a></dt>
+<dd><p>Configuration for the model, should be a dictionary conforming to [<cite>ConfigDict</cite>][pydantic.config.ConfigDict].</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ai2_kit.domain.vasp.CllVaspContextConfig.model_fields">
+<span class="sig-name descname"><span class="pre">model_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'concurrency':</span> <span class="pre">FieldInfo(annotation=int,</span> <span class="pre">required=False,</span> <span class="pre">default=5),</span> <span class="pre">'script_template':</span> <span class="pre">FieldInfo(annotation=BashTemplate,</span> <span class="pre">required=True),</span> <span class="pre">'vasp_cmd':</span> <span class="pre">FieldInfo(annotation=str,</span> <span class="pre">required=False,</span> <span class="pre">default='vasp_std')}</span></em><a class="headerlink" href="#ai2_kit.domain.vasp.CllVaspContextConfig.model_fields" title="Link to this definition">#</a></dt>
+<dd><p>Metadata about the fields defined on the model,
+mapping of field names to [<cite>FieldInfo</cite>][pydantic.fields.FieldInfo].</p>
+<p>This replaces <cite>Model.__fields__</cite> from Pydantic V1.</p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="ai2_kit.domain.vasp.CllVaspContextConfig.script_template">
@@ -614,6 +640,26 @@ document.write(`
 <dt class="sig sig-object py" id="ai2_kit.domain.vasp.CllVaspInputConfig.limit_method">
 <span class="sig-name descname"><span class="pre">limit_method</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'even'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'random'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'truncate'</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#ai2_kit.domain.vasp.CllVaspInputConfig.limit_method" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ai2_kit.domain.vasp.CllVaspInputConfig.model_computed_fields">
+<span class="sig-name descname"><span class="pre">model_computed_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ComputedFieldInfo</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#ai2_kit.domain.vasp.CllVaspInputConfig.model_computed_fields" title="Link to this definition">#</a></dt>
+<dd><p>A dictionary of computed field names and their corresponding <cite>ComputedFieldInfo</cite> objects.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ai2_kit.domain.vasp.CllVaspInputConfig.model_config">
+<span class="sig-name descname"><span class="pre">model_config</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">ConfigDict</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'extra':</span> <span class="pre">'forbid'}</span></em><a class="headerlink" href="#ai2_kit.domain.vasp.CllVaspInputConfig.model_config" title="Link to this definition">#</a></dt>
+<dd><p>Configuration for the model, should be a dictionary conforming to [<cite>ConfigDict</cite>][pydantic.config.ConfigDict].</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ai2_kit.domain.vasp.CllVaspInputConfig.model_fields">
+<span class="sig-name descname"><span class="pre">model_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'init_system_files':</span> <span class="pre">FieldInfo(annotation=List[str],</span> <span class="pre">required=False,</span> <span class="pre">default=[]),</span> <span class="pre">'input_template':</span> <span class="pre">FieldInfo(annotation=Union[dict,</span> <span class="pre">str],</span> <span class="pre">required=True),</span> <span class="pre">'kpoints_template':</span> <span class="pre">FieldInfo(annotation=Union[dict,</span> <span class="pre">str,</span> <span class="pre">NoneType],</span> <span class="pre">required=False,</span> <span class="pre">default=None),</span> <span class="pre">'limit':</span> <span class="pre">FieldInfo(annotation=int,</span> <span class="pre">required=False,</span> <span class="pre">default=50),</span> <span class="pre">'limit_method':</span> <span class="pre">FieldInfo(annotation=Literal['even',</span> <span class="pre">'random',</span> <span class="pre">'truncate'],</span> <span class="pre">required=False,</span> <span class="pre">default='even'),</span> <span class="pre">'potcar_source':</span> <span class="pre">FieldInfo(annotation=Union[dict,</span> <span class="pre">list],</span> <span class="pre">required=True)}</span></em><a class="headerlink" href="#ai2_kit.domain.vasp.CllVaspInputConfig.model_fields" title="Link to this definition">#</a></dt>
+<dd><p>Metadata about the fields defined on the model,
+mapping of field names to [<cite>FieldInfo</cite>][pydantic.fields.FieldInfo].</p>
+<p>This replaces <cite>Model.__fields__</cite> from Pydantic V1.</p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="ai2_kit.domain.vasp.CllVaspInputConfig.potcar_source">
@@ -721,6 +767,9 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.vasp.CllVaspContextConfig"><code class="docutils literal notranslate"><span class="pre">CllVaspContextConfig</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.vasp.CllVaspContextConfig.concurrency"><code class="docutils literal notranslate"><span class="pre">CllVaspContextConfig.concurrency</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.vasp.CllVaspContextConfig.model_computed_fields"><code class="docutils literal notranslate"><span class="pre">CllVaspContextConfig.model_computed_fields</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.vasp.CllVaspContextConfig.model_config"><code class="docutils literal notranslate"><span class="pre">CllVaspContextConfig.model_config</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.vasp.CllVaspContextConfig.model_fields"><code class="docutils literal notranslate"><span class="pre">CllVaspContextConfig.model_fields</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.vasp.CllVaspContextConfig.script_template"><code class="docutils literal notranslate"><span class="pre">CllVaspContextConfig.script_template</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.vasp.CllVaspContextConfig.vasp_cmd"><code class="docutils literal notranslate"><span class="pre">CllVaspContextConfig.vasp_cmd</span></code></a></li>
 </ul>
@@ -738,6 +787,9 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.vasp.CllVaspInputConfig.kpoints_template"><code class="docutils literal notranslate"><span class="pre">CllVaspInputConfig.kpoints_template</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.vasp.CllVaspInputConfig.limit"><code class="docutils literal notranslate"><span class="pre">CllVaspInputConfig.limit</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.vasp.CllVaspInputConfig.limit_method"><code class="docutils literal notranslate"><span class="pre">CllVaspInputConfig.limit_method</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.vasp.CllVaspInputConfig.model_computed_fields"><code class="docutils literal notranslate"><span class="pre">CllVaspInputConfig.model_computed_fields</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.vasp.CllVaspInputConfig.model_config"><code class="docutils literal notranslate"><span class="pre">CllVaspInputConfig.model_config</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.vasp.CllVaspInputConfig.model_fields"><code class="docutils literal notranslate"><span class="pre">CllVaspInputConfig.model_fields</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.vasp.CllVaspInputConfig.potcar_source"><code class="docutils literal notranslate"><span class="pre">CllVaspInputConfig.potcar_source</span></code></a></li>
 </ul>
 </li>

@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -488,6 +488,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdContextConfig"><code class="docutils literal notranslate"><span class="pre">CllDeepmdContextConfig</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdContextConfig.concurrency"><code class="docutils literal notranslate"><span class="pre">CllDeepmdContextConfig.concurrency</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdContextConfig.dp_cmd"><code class="docutils literal notranslate"><span class="pre">CllDeepmdContextConfig.dp_cmd</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdContextConfig.model_computed_fields"><code class="docutils literal notranslate"><span class="pre">CllDeepmdContextConfig.model_computed_fields</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdContextConfig.model_config"><code class="docutils literal notranslate"><span class="pre">CllDeepmdContextConfig.model_config</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdContextConfig.model_fields"><code class="docutils literal notranslate"><span class="pre">CllDeepmdContextConfig.model_fields</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdContextConfig.multi_gpus_per_job"><code class="docutils literal notranslate"><span class="pre">CllDeepmdContextConfig.multi_gpus_per_job</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdContextConfig.script_template"><code class="docutils literal notranslate"><span class="pre">CllDeepmdContextConfig.script_template</span></code></a></li>
 </ul>
@@ -505,6 +508,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdInputConfig"><code class="docutils literal notranslate"><span class="pre">CllDeepmdInputConfig</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdInputConfig.DwTraningConfig"><code class="docutils literal notranslate"><span class="pre">CllDeepmdInputConfig.DwTraningConfig</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdInputConfig.DwTraningConfig.input_template"><code class="docutils literal notranslate"><span class="pre">CllDeepmdInputConfig.DwTraningConfig.input_template</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdInputConfig.DwTraningConfig.model_computed_fields"><code class="docutils literal notranslate"><span class="pre">CllDeepmdInputConfig.DwTraningConfig.model_computed_fields</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdInputConfig.DwTraningConfig.model_config"><code class="docutils literal notranslate"><span class="pre">CllDeepmdInputConfig.DwTraningConfig.model_config</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdInputConfig.DwTraningConfig.model_fields"><code class="docutils literal notranslate"><span class="pre">CllDeepmdInputConfig.DwTraningConfig.model_fields</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdInputConfig.compress_model"><code class="docutils literal notranslate"><span class="pre">CllDeepmdInputConfig.compress_model</span></code></a></li>
@@ -516,6 +522,9 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdInputConfig.input_modifier_fn"><code class="docutils literal notranslate"><span class="pre">CllDeepmdInputConfig.input_modifier_fn</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdInputConfig.input_template"><code class="docutils literal notranslate"><span class="pre">CllDeepmdInputConfig.input_template</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdInputConfig.isolate_outliers"><code class="docutils literal notranslate"><span class="pre">CllDeepmdInputConfig.isolate_outliers</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdInputConfig.model_computed_fields"><code class="docutils literal notranslate"><span class="pre">CllDeepmdInputConfig.model_computed_fields</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdInputConfig.model_config"><code class="docutils literal notranslate"><span class="pre">CllDeepmdInputConfig.model_config</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdInputConfig.model_fields"><code class="docutils literal notranslate"><span class="pre">CllDeepmdInputConfig.model_fields</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdInputConfig.model_num"><code class="docutils literal notranslate"><span class="pre">CllDeepmdInputConfig.model_num</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdInputConfig.outlier_f_cutoff"><code class="docutils literal notranslate"><span class="pre">CllDeepmdInputConfig.outlier_f_cutoff</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdInputConfig.outlier_weight"><code class="docutils literal notranslate"><span class="pre">CllDeepmdInputConfig.outlier_weight</span></code></a></li>
@@ -571,6 +580,26 @@ document.write(`
 <dt class="sig sig-object py" id="ai2_kit.domain.deepmd.CllDeepmdContextConfig.dp_cmd">
 <span class="sig-name descname"><span class="pre">dp_cmd</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ai2_kit.domain.deepmd.CllDeepmdContextConfig.dp_cmd" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ai2_kit.domain.deepmd.CllDeepmdContextConfig.model_computed_fields">
+<span class="sig-name descname"><span class="pre">model_computed_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ComputedFieldInfo</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#ai2_kit.domain.deepmd.CllDeepmdContextConfig.model_computed_fields" title="Link to this definition">#</a></dt>
+<dd><p>A dictionary of computed field names and their corresponding <cite>ComputedFieldInfo</cite> objects.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ai2_kit.domain.deepmd.CllDeepmdContextConfig.model_config">
+<span class="sig-name descname"><span class="pre">model_config</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">ConfigDict</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'extra':</span> <span class="pre">'forbid'}</span></em><a class="headerlink" href="#ai2_kit.domain.deepmd.CllDeepmdContextConfig.model_config" title="Link to this definition">#</a></dt>
+<dd><p>Configuration for the model, should be a dictionary conforming to [<cite>ConfigDict</cite>][pydantic.config.ConfigDict].</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ai2_kit.domain.deepmd.CllDeepmdContextConfig.model_fields">
+<span class="sig-name descname"><span class="pre">model_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'concurrency':</span> <span class="pre">FieldInfo(annotation=int,</span> <span class="pre">required=False,</span> <span class="pre">default=5),</span> <span class="pre">'dp_cmd':</span> <span class="pre">FieldInfo(annotation=str,</span> <span class="pre">required=False,</span> <span class="pre">default='dp'),</span> <span class="pre">'multi_gpus_per_job':</span> <span class="pre">FieldInfo(annotation=bool,</span> <span class="pre">required=False,</span> <span class="pre">default=False),</span> <span class="pre">'script_template':</span> <span class="pre">FieldInfo(annotation=BashTemplate,</span> <span class="pre">required=True)}</span></em><a class="headerlink" href="#ai2_kit.domain.deepmd.CllDeepmdContextConfig.model_fields" title="Link to this definition">#</a></dt>
+<dd><p>Metadata about the fields defined on the model,
+mapping of field names to [<cite>FieldInfo</cite>][pydantic.fields.FieldInfo].</p>
+<p>This replaces <cite>Model.__fields__</cite> from Pydantic V1.</p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="ai2_kit.domain.deepmd.CllDeepmdContextConfig.multi_gpus_per_job">
@@ -641,6 +670,26 @@ document.write(`
 Ref: <a class="reference external" href="https://docs.deepmodeling.com/projects/deepmd/en/master/model/dplr.html">https://docs.deepmodeling.com/projects/deepmd/en/master/model/dplr.html</a></p>
 </dd></dl>
 
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ai2_kit.domain.deepmd.CllDeepmdInputConfig.DwTraningConfig.model_computed_fields">
+<span class="sig-name descname"><span class="pre">model_computed_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ComputedFieldInfo</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#ai2_kit.domain.deepmd.CllDeepmdInputConfig.DwTraningConfig.model_computed_fields" title="Link to this definition">#</a></dt>
+<dd><p>A dictionary of computed field names and their corresponding <cite>ComputedFieldInfo</cite> objects.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ai2_kit.domain.deepmd.CllDeepmdInputConfig.DwTraningConfig.model_config">
+<span class="sig-name descname"><span class="pre">model_config</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">ConfigDict</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'extra':</span> <span class="pre">'forbid'}</span></em><a class="headerlink" href="#ai2_kit.domain.deepmd.CllDeepmdInputConfig.DwTraningConfig.model_config" title="Link to this definition">#</a></dt>
+<dd><p>Configuration for the model, should be a dictionary conforming to [<cite>ConfigDict</cite>][pydantic.config.ConfigDict].</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ai2_kit.domain.deepmd.CllDeepmdInputConfig.DwTraningConfig.model_fields">
+<span class="sig-name descname"><span class="pre">model_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'input_template':</span> <span class="pre">FieldInfo(annotation=dict,</span> <span class="pre">required=True)}</span></em><a class="headerlink" href="#ai2_kit.domain.deepmd.CllDeepmdInputConfig.DwTraningConfig.model_fields" title="Link to this definition">#</a></dt>
+<dd><p>Metadata about the fields defined on the model,
+mapping of field names to [<cite>FieldInfo</cite>][pydantic.fields.FieldInfo].</p>
+<p>This replaces <cite>Model.__fields__</cite> from Pydantic V1.</p>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="py attribute">
@@ -709,6 +758,26 @@ return new_input</p>
 <dt class="sig sig-object py" id="ai2_kit.domain.deepmd.CllDeepmdInputConfig.isolate_outliers">
 <span class="sig-name descname"><span class="pre">isolate_outliers</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#ai2_kit.domain.deepmd.CllDeepmdInputConfig.isolate_outliers" title="Link to this definition">#</a></dt>
 <dd><p>If isolate_outliers is enabled, then outlier data will be separated from training data.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ai2_kit.domain.deepmd.CllDeepmdInputConfig.model_computed_fields">
+<span class="sig-name descname"><span class="pre">model_computed_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ComputedFieldInfo</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#ai2_kit.domain.deepmd.CllDeepmdInputConfig.model_computed_fields" title="Link to this definition">#</a></dt>
+<dd><p>A dictionary of computed field names and their corresponding <cite>ComputedFieldInfo</cite> objects.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ai2_kit.domain.deepmd.CllDeepmdInputConfig.model_config">
+<span class="sig-name descname"><span class="pre">model_config</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">ConfigDict</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'extra':</span> <span class="pre">'forbid'}</span></em><a class="headerlink" href="#ai2_kit.domain.deepmd.CllDeepmdInputConfig.model_config" title="Link to this definition">#</a></dt>
+<dd><p>Configuration for the model, should be a dictionary conforming to [<cite>ConfigDict</cite>][pydantic.config.ConfigDict].</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ai2_kit.domain.deepmd.CllDeepmdInputConfig.model_fields">
+<span class="sig-name descname"><span class="pre">model_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'compress_model':</span> <span class="pre">FieldInfo(annotation=bool,</span> <span class="pre">required=False,</span> <span class="pre">default=False),</span> <span class="pre">'fixture_models':</span> <span class="pre">FieldInfo(annotation=List[str],</span> <span class="pre">required=False,</span> <span class="pre">default=[]),</span> <span class="pre">'group_by_formula':</span> <span class="pre">FieldInfo(annotation=bool,</span> <span class="pre">required=False,</span> <span class="pre">default=False),</span> <span class="pre">'ignore_error':</span> <span class="pre">FieldInfo(annotation=bool,</span> <span class="pre">required=False,</span> <span class="pre">default=False),</span> <span class="pre">'init_dataset':</span> <span class="pre">FieldInfo(annotation=List[str],</span> <span class="pre">required=False,</span> <span class="pre">default=[]),</span> <span class="pre">'init_from_previous':</span> <span class="pre">FieldInfo(annotation=bool,</span> <span class="pre">required=False,</span> <span class="pre">default=False),</span> <span class="pre">'input_modifier_fn':</span> <span class="pre">FieldInfo(annotation=Union[str,</span> <span class="pre">NoneType],</span> <span class="pre">required=False,</span> <span class="pre">default=None),</span> <span class="pre">'input_template':</span> <span class="pre">FieldInfo(annotation=dict,</span> <span class="pre">required=False,</span> <span class="pre">default={}),</span> <span class="pre">'isolate_outliers':</span> <span class="pre">FieldInfo(annotation=bool,</span> <span class="pre">required=False,</span> <span class="pre">default=False),</span> <span class="pre">'model_num':</span> <span class="pre">FieldInfo(annotation=int,</span> <span class="pre">required=False,</span> <span class="pre">default=4),</span> <span class="pre">'outlier_f_cutoff':</span> <span class="pre">FieldInfo(annotation=float,</span> <span class="pre">required=False,</span> <span class="pre">default=10.0),</span> <span class="pre">'outlier_weight':</span> <span class="pre">FieldInfo(annotation=float,</span> <span class="pre">required=False,</span> <span class="pre">default=0.003),</span> <span class="pre">'pretrained_model':</span> <span class="pre">FieldInfo(annotation=Union[str,</span> <span class="pre">NoneType],</span> <span class="pre">required=False,</span> <span class="pre">default=None),</span> <span class="pre">'train_dw':</span> <span class="pre">FieldInfo(annotation=Union[CllDeepmdInputConfig.DwTraningConfig,</span> <span class="pre">NoneType],</span> <span class="pre">required=False,</span> <span class="pre">default=None)}</span></em><a class="headerlink" href="#ai2_kit.domain.deepmd.CllDeepmdInputConfig.model_fields" title="Link to this definition">#</a></dt>
+<dd><p>Metadata about the fields defined on the model,
+mapping of field names to [<cite>FieldInfo</cite>][pydantic.fields.FieldInfo].</p>
+<p>This replaces <cite>Model.__fields__</cite> from Pydantic V1.</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -862,6 +931,9 @@ return new_input</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdContextConfig"><code class="docutils literal notranslate"><span class="pre">CllDeepmdContextConfig</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdContextConfig.concurrency"><code class="docutils literal notranslate"><span class="pre">CllDeepmdContextConfig.concurrency</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdContextConfig.dp_cmd"><code class="docutils literal notranslate"><span class="pre">CllDeepmdContextConfig.dp_cmd</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdContextConfig.model_computed_fields"><code class="docutils literal notranslate"><span class="pre">CllDeepmdContextConfig.model_computed_fields</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdContextConfig.model_config"><code class="docutils literal notranslate"><span class="pre">CllDeepmdContextConfig.model_config</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdContextConfig.model_fields"><code class="docutils literal notranslate"><span class="pre">CllDeepmdContextConfig.model_fields</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdContextConfig.multi_gpus_per_job"><code class="docutils literal notranslate"><span class="pre">CllDeepmdContextConfig.multi_gpus_per_job</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdContextConfig.script_template"><code class="docutils literal notranslate"><span class="pre">CllDeepmdContextConfig.script_template</span></code></a></li>
 </ul>
@@ -879,6 +951,9 @@ return new_input</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdInputConfig"><code class="docutils literal notranslate"><span class="pre">CllDeepmdInputConfig</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdInputConfig.DwTraningConfig"><code class="docutils literal notranslate"><span class="pre">CllDeepmdInputConfig.DwTraningConfig</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdInputConfig.DwTraningConfig.input_template"><code class="docutils literal notranslate"><span class="pre">CllDeepmdInputConfig.DwTraningConfig.input_template</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdInputConfig.DwTraningConfig.model_computed_fields"><code class="docutils literal notranslate"><span class="pre">CllDeepmdInputConfig.DwTraningConfig.model_computed_fields</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdInputConfig.DwTraningConfig.model_config"><code class="docutils literal notranslate"><span class="pre">CllDeepmdInputConfig.DwTraningConfig.model_config</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdInputConfig.DwTraningConfig.model_fields"><code class="docutils literal notranslate"><span class="pre">CllDeepmdInputConfig.DwTraningConfig.model_fields</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdInputConfig.compress_model"><code class="docutils literal notranslate"><span class="pre">CllDeepmdInputConfig.compress_model</span></code></a></li>
@@ -890,6 +965,9 @@ return new_input</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdInputConfig.input_modifier_fn"><code class="docutils literal notranslate"><span class="pre">CllDeepmdInputConfig.input_modifier_fn</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdInputConfig.input_template"><code class="docutils literal notranslate"><span class="pre">CllDeepmdInputConfig.input_template</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdInputConfig.isolate_outliers"><code class="docutils literal notranslate"><span class="pre">CllDeepmdInputConfig.isolate_outliers</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdInputConfig.model_computed_fields"><code class="docutils literal notranslate"><span class="pre">CllDeepmdInputConfig.model_computed_fields</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdInputConfig.model_config"><code class="docutils literal notranslate"><span class="pre">CllDeepmdInputConfig.model_config</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdInputConfig.model_fields"><code class="docutils literal notranslate"><span class="pre">CllDeepmdInputConfig.model_fields</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdInputConfig.model_num"><code class="docutils literal notranslate"><span class="pre">CllDeepmdInputConfig.model_num</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdInputConfig.outlier_f_cutoff"><code class="docutils literal notranslate"><span class="pre">CllDeepmdInputConfig.outlier_f_cutoff</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.deepmd.CllDeepmdInputConfig.outlier_weight"><code class="docutils literal notranslate"><span class="pre">CllDeepmdInputConfig.outlier_weight</span></code></a></li>

@@ -45,15 +45,15 @@ print("Current Directory Is: ", os.getcwd())
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mRuntimeError[0m                              Traceback (most recent call last)
-File [0;32m/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/matplotlib/backends/registry.py:413[0m, in [0;36mBackendRegistry.resolve_gui_or_backend[0;34m(self, gui_or_backend)[0m
-[1;32m    412[0m [38;5;28;01mtry[39;00m:
-[0;32m--> 413[0m     [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mresolve_backend[49m[43m([49m[43mgui_or_backend[49m[43m)[49m
-[1;32m    414[0m [38;5;28;01mexcept[39;00m [38;5;167;01mException[39;00m:  [38;5;66;03m# KeyError ?[39;00m
+File [0;32m/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/matplotlib/backends/registry.py:404[0m, in [0;36mBackendRegistry.resolve_gui_or_backend[0;34m(self, gui_or_backend)[0m
+[1;32m    403[0m [38;5;28;01mtry[39;00m:
+[0;32m--> 404[0m     [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mresolve_backend[49m[43m([49m[43mgui_or_backend[49m[43m)[49m
+[1;32m    405[0m [38;5;28;01mexcept[39;00m [38;5;167;01mException[39;00m:  [38;5;66;03m# KeyError ?[39;00m
 
-File [0;32m/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/matplotlib/backends/registry.py:375[0m, in [0;36mBackendRegistry.resolve_backend[0;34m(self, backend)[0m
-[1;32m    374[0m [38;5;28;01mif[39;00m gui [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
-[0;32m--> 375[0m     [38;5;28;01mraise[39;00m [38;5;167;01mRuntimeError[39;00m([38;5;124mf[39m[38;5;124m"[39m[38;5;124m'[39m[38;5;132;01m{[39;00mbackend[38;5;132;01m}[39;00m[38;5;124m'[39m[38;5;124m is not a recognised backend name[39m[38;5;124m"[39m)
-[1;32m    377[0m [38;5;28;01mreturn[39;00m backend, gui [38;5;28;01mif[39;00m gui [38;5;241m!=[39m [38;5;124m"[39m[38;5;124mheadless[39m[38;5;124m"[39m [38;5;28;01melse[39;00m [38;5;28;01mNone[39;00m
+File [0;32m/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/matplotlib/backends/registry.py:367[0m, in [0;36mBackendRegistry.resolve_backend[0;34m(self, backend)[0m
+[1;32m    366[0m [38;5;28;01mif[39;00m gui [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[0;32m--> 367[0m     [38;5;28;01mraise[39;00m [38;5;167;01mRuntimeError[39;00m([38;5;124mf[39m[38;5;124m"[39m[38;5;124m'[39m[38;5;132;01m{[39;00mbackend[38;5;132;01m}[39;00m[38;5;124m'[39m[38;5;124m is not a recognised backend name[39m[38;5;124m"[39m)
+[1;32m    369[0m [38;5;28;01mreturn[39;00m backend, gui [38;5;28;01mif[39;00m gui [38;5;241m!=[39m [38;5;124m"[39m[38;5;124mheadless[39m[38;5;124m"[39m [38;5;28;01melse[39;00m [38;5;28;01mNone[39;00m
 
 [0;31mRuntimeError[0m: 'widget' is not a recognised backend name
 
@@ -99,11 +99,11 @@ File [0;32m/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/
 [1;32m    351[0m gui [38;5;241m=[39m _convert_gui_from_matplotlib(gui)
 [1;32m    352[0m [38;5;28;01mreturn[39;00m gui, backend
 
-File [0;32m/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/matplotlib/backends/registry.py:415[0m, in [0;36mBackendRegistry.resolve_gui_or_backend[0;34m(self, gui_or_backend)[0m
-[1;32m    413[0m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39mresolve_backend(gui_or_backend)
-[1;32m    414[0m [38;5;28;01mexcept[39;00m [38;5;167;01mException[39;00m:  [38;5;66;03m# KeyError ?[39;00m
-[0;32m--> 415[0m     [38;5;28;01mraise[39;00m [38;5;167;01mRuntimeError[39;00m(
-[1;32m    416[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;124m'[39m[38;5;132;01m{[39;00mgui_or_backend[38;5;132;01m}[39;00m[38;5;124m is not a recognised GUI loop or backend name[39m[38;5;124m"[39m)
+File [0;32m/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/matplotlib/backends/registry.py:406[0m, in [0;36mBackendRegistry.resolve_gui_or_backend[0;34m(self, gui_or_backend)[0m
+[1;32m    404[0m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39mresolve_backend(gui_or_backend)
+[1;32m    405[0m [38;5;28;01mexcept[39;00m [38;5;167;01mException[39;00m:  [38;5;66;03m# KeyError ?[39;00m
+[0;32m--> 406[0m     [38;5;28;01mraise[39;00m [38;5;167;01mRuntimeError[39;00m(
+[1;32m    407[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;124m'[39m[38;5;132;01m{[39;00mgui_or_backend[38;5;132;01m}[39;00m[38;5;124m is not a recognised GUI loop or backend name[39m[38;5;124m"[39m)
 
 [0;31mRuntimeError[0m: 'widget is not a recognised GUI loop or backend name
 
