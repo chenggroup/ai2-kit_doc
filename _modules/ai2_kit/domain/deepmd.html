@@ -560,6 +560,11 @@ document.write(`
     <span class="n">ignore_error</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Ignore non critical errors.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">dp_train_opts</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Extra options for dp train command</span>
 <span class="sd">    &quot;&quot;&quot;</span></div>
 
 
@@ -692,6 +697,7 @@ document.write(`
             <span class="n">compress_model</span><span class="o">=</span><span class="nb">input</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">compress_model</span><span class="p">,</span>
             <span class="n">cwd</span><span class="o">=</span><span class="n">dw_task_dir</span><span class="p">,</span>
             <span class="n">pretrained_model</span><span class="o">=</span><span class="nb">input</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">pretrained_model</span><span class="p">,</span>
+            <span class="n">dp_train_opts</span><span class="o">=</span><span class="nb">input</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">dp_train_opts</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="n">dw_train_script</span> <span class="o">=</span> <span class="n">BashScript</span><span class="p">(</span>
             <span class="n">template</span><span class="o">=</span><span class="n">ctx</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">script_template</span><span class="p">,</span>
@@ -788,10 +794,11 @@ document.write(`
                         <span class="n">compress_model</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
                         <span class="n">cwd</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
                         <span class="n">previous_model</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-                        <span class="n">pretrained_model</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,):</span>
+                        <span class="n">pretrained_model</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                        <span class="n">dp_train_opts</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="p">):</span>
     <span class="n">steps</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">dp_train_cmd</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">dp_cmd</span><span class="si">}</span><span class="s1"> train </span><span class="si">{</span><span class="n">DP_INPUT_FILE</span><span class="si">}</span><span class="s1">&#39;</span>
-
+    <span class="n">dp_train_cmd</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">dp_cmd</span><span class="si">}</span><span class="s1"> train </span><span class="si">{</span><span class="n">dp_train_opts</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">DP_INPUT_FILE</span><span class="si">}</span><span class="s1">&#39;</span>
     <span class="k">if</span> <span class="n">previous_model</span><span class="p">:</span>
         <span class="n">dp_train_cmd</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">dp_train_cmd</span><span class="si">}</span><span class="s1"> -f </span><span class="si">{</span><span class="n">previous_model</span><span class="si">}</span><span class="s1">&#39;</span>
     <span class="k">if</span> <span class="n">pretrained_model</span><span class="p">:</span>

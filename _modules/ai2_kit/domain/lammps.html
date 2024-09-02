@@ -529,7 +529,7 @@ document.write(`
 <span class="sd">    Those vars can be referenced in the LAMMPS input template as $$VAR_NAME.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">plumed_config</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+    <span class="n">plumed_config</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Plumed config file content.&quot;&quot;&quot;</span>
 
     <span class="n">system_files</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
@@ -580,7 +580,7 @@ document.write(`
 
 <div class="viewcode-block" id="CllLammpsInputConfig.validate_explore_variants">
 <a class="viewcode-back" href="../../../_api/ai2_kit.domain.lammps.html#ai2_kit.domain.lammps.CllLammpsInputConfig.validate_explore_variants">[docs]</a>
-    <span class="nd">@field_validator</span><span class="p">(</span><span class="s1">&#39;explore_vars&#39;</span><span class="p">)</span>
+    <span class="nd">@field_validator</span><span class="p">(</span><span class="s1">&#39;explore_vars&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;before&#39;</span><span class="p">)</span>
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">validate_explore_variants</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
