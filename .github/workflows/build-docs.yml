@@ -3,6 +3,9 @@ name: Build and Deploy Docs
 on:
   repository_dispatch:
     types: [pypi-publish]
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
@@ -17,6 +20,11 @@ jobs:
       with:
         python-version: '3.10'
 
+    - name: Install Ubuntu dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y make pandoc
+
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
@@ -28,17 +36,33 @@ jobs:
         GITLAB_REPO_URL: ${{ secrets.GITLAB_REPO_URL }}
       run: |
         git clone https://${GITLAB_USER}:${GITLAB_TOKEN}@${GITLAB_REPO_URL}.git
-    
+
     - name: Install dependencies
       run: |
         pip install ./ai2-kit
-        pip install jupyter-book
+        pip install sphinx sphinx-apidoc myst_parser nbsphinx sphinxcontrib-bibtex pydata_sphinx_theme
 
-    - name: Update docs and notebooks
+    # doc and notebook: needs to be reviewed
+    - name: Compare doc and notebook
       run: |
-        cp -r ai2-kit/doc/* ./doc/
-        cp -r ai2-kit/notebook/* ./notebook/
-    
+        diff -r ai2-kit/doc/ doc/
+        diff -r ai2-kit/notebook/ notebook/
+      output:
+        diff: ${{ steps.compare-doc.outputs.diff }}
+
+    - name: PR if doc or notebook changed
+      if: steps.compare-doc.outputs.diff != ''
+      uses: peter-evans/create-pull-request@v3
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        commit-message: Update doc and notebook
+        title: Update doc and notebook
+        body: |
+          This PR updates the doc and notebook to the latest version.
+        branch: update-doc-and-notebook
+        base: main
+
+    # API doc: update without PR
     - name: Sphinx APIDoc
       run: |
         sphinx-apidoc -f -o _api/ ai2-kit/ai2_kit/ --separate
@@ -46,7 +70,7 @@ jobs:
     # Build the book
     - name: Build the book
       run: |
-        jupyter-book build .
+        make html
 
     # Push the book's HTML to github-pages
     - name: GitHub Pages action
@@ -55,13 +79,3 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: _build/html
-    
-    # Commit the changes
-    - name: Commit changes
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add doc/ notebook/
-        git commit -m "[skip ci] Update doc and notebook"
-        git push
-      if: github.event_name != 'pull_request'

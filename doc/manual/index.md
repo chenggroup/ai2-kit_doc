@@ -1,18 +1,10 @@
----
-myst:
-  html_meta:
-    "description lang=en": |
-      Top-level documentation for pydata-sphinx theme, with links to the rest
-      of the site..
-html_theme.sidebar_secondary.remove: true
----
-
 # User Manual
 
 ## Featuring Tools
 
 ```{toctree}
 :maxdepth: 1
+:caption: Featuring Tools
 
 ai2cat
 ai2-spectr-ir-raman
@@ -22,6 +14,7 @@ ai2-spectr-ir-raman
 
 ```{toctree}
 :maxdepth: 1
+:caption: Workflows
 
 cll-workflow
 fep-workflow
@@ -29,10 +22,10 @@ fep-workflow
 
 ## Domain Specific Tools
 
-## Workflows
-
 ```{toctree}
 :maxdepth: 1
+:caption: Domain Specific Tools
+
 proton-transfer
 aos-analysis
 ```
@@ -41,17 +34,20 @@ aos-analysis
 
 ```{toctree}
 :maxdepth: 1
+:caption: Build-in Functionalities
 
 tips
 batch
 ase
 dpdata
+reweighting
 ```
 
 ## Miscellaneous
 
 ```{toctree}
 :maxdepth: 1
+:caption: Miscellaneous
 
 hpc-executor
 checkpoint
@@ -61,7 +57,17 @@ checkpoint
 
 ```{toctree}
 :maxdepth: 1
+:caption: 中文文档
 
 cll-workflow.zh
 hpc-executor.zh
+```
+
+## References
+
+```{toctree}
+:maxdepth: 1
+:caption: References
+
+references
 ```

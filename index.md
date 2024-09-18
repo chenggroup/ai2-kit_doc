@@ -37,20 +37,15 @@ Note that instead of running global `ai2-kit` command, you should run `./ai2-kit
 
 ## Manuals
 
-```{tableofcontents}
-```
-
-## Acknowledgement
-This project is inspired by and built upon the following projects:
-* [dpgen](https://github.com/deepmodeling/dpgen/tree/master/dpgen): A concurrent learning platform for the generation of reliable deep learning based potential energy models.
-* [ase](https://wiki.fysik.dtu.dk/ase/): Atomic Simulation Environment.
-
 ```{toctree}
-:maxdepth: 1
-:hidden:
+:maxdepth: 2
 
 User Guide <doc/manual/index>
 Notebooks <notebook/index.md>
 API Reference <_api/modules>
 ```
 
+## Acknowledgement
+This project is inspired by and built upon the following projects:
+* [dpgen](https://github.com/deepmodeling/dpgen/tree/master/dpgen): A concurrent learning platform for the generation of reliable deep learning based potential energy models.
+* [ase](https://wiki.fysik.dtu.dk/ase/): Atomic Simulation Environment.
