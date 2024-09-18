@@ -1,1 +1,7 @@
-ai2-kit==0.20.2
+ai2-kit
+sphinx
+sphinx-apidoc
+myst_parser
+nbsphinx
+sphinxcontrib-bibtex
+pydata_sphinx_theme
