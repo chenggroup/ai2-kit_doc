@@ -91,7 +91,7 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add docs/ notebooks/
-        git commit -m "[skip ci] Update docs and notebooks"
+        git add doc/ notebook/
+        git commit -m "[skip ci] Update doc and notebook"
         git push
       if: github.event_name != 'pull_request'
