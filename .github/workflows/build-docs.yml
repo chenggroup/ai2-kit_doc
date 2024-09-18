@@ -11,6 +11,8 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    outputs:
+      diff: ${{ steps.build-and-deploy.outputs.diff }}
     steps:
     - name: Checkout
       uses: actions/checkout@v3
@@ -47,11 +49,9 @@ jobs:
       run: |
         diff -r ai2-kit/doc/ doc/
         diff -r ai2-kit/notebook/ notebook/
-      output:
-        diff: ${{ steps.compare-doc.outputs.diff }}
 
     - name: PR if doc or notebook changed
-      if: steps.compare-doc.outputs.diff != ''
+      if: steps.build-and-deploy.outputs.diff != ''
       uses: peter-evans/create-pull-request@v3
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
