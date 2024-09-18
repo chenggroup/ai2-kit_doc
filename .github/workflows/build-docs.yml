@@ -42,7 +42,7 @@ jobs:
     - name: Install dependencies
       run: |
         pip install ./ai2-kit
-        pip install sphinx sphinx-apidoc myst_parser nbsphinx sphinxcontrib-bibtex pydata_sphinx_theme
+        pip install -r requirements.txt
 
     # doc and notebook: needs to be reviewed
     - name: Compare doc and notebook

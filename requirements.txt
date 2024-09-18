@@ -1,6 +1,5 @@
 ai2-kit
 sphinx
-sphinx-apidoc
 myst_parser
 nbsphinx
 sphinxcontrib-bibtex
