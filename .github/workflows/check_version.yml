@@ -84,7 +84,7 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ai2-kit/jupyter-book/_build/html
+        publish_dir: _build/html
     
     # Commit the changes
     - name: Commit changes
