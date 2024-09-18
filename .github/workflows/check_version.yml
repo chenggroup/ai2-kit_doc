@@ -19,7 +19,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.11'
+        python-version: '3.10'
     - name: Install dependencies
       run: pip install requests
     - name: Check for version updates
@@ -45,7 +45,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.x'
+        python-version: '3.10'
 
     - name: Install dependencies
       run: |
@@ -87,12 +87,11 @@ jobs:
         publish_dir: ai2-kit/jupyter-book/_build/html
     
     # Commit the changes
-    - name: Get author and committer info from HEAD commit
-      uses: rlespinasse/git-commit-data-action@v1
-      if: github.ref == 'refs/heads/main'
-
-    - name: Commit changed files
-      uses: stefanzweifel/git-auto-commit-action@v4
-      with:
-        commit_message: "[skip ci] Update the book"
-      if: github.ref == 'refs/heads/main'
+    - name: Commit changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add docs/ notebooks/
+        git commit -m "[skip ci] Update docs and notebooks"
+        git push
+      if: github.event_name != 'pull_request'
