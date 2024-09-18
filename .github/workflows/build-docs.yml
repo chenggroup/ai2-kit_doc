@@ -12,7 +12,7 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     outputs:
-      diff: ${{ steps.build-and-deploy.outputs.diff }}
+      diff: ${{ steps.compare-docs-and-notebooks.outputs.diff }}
     steps:
     - name: Checkout
       uses: actions/checkout@v3
@@ -44,24 +44,6 @@ jobs:
         pip install ./ai2-kit
         pip install -r requirements.txt
 
-    # doc and notebook: needs to be reviewed
-    - name: Compare doc and notebook
-      run: |
-        diff -r ai2-kit/doc/ doc/
-        diff -r ai2-kit/notebook/ notebook/
-
-    - name: PR if doc or notebook changed
-      if: steps.build-and-deploy.outputs.diff != ''
-      uses: peter-evans/create-pull-request@v3
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        commit-message: Update doc and notebook
-        title: Update doc and notebook
-        body: |
-          This PR updates the doc and notebook to the latest version.
-        branch: update-doc-and-notebook
-        base: main
-
     # API doc: update without PR
     - name: Sphinx APIDoc
       run: |
@@ -79,3 +61,34 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: _build/html
+
+    # doc and notebook: needs to be reviewed
+    - name: Compare doc and notebook
+      id: compare-docs-and-notebooks
+      run: |
+        diff -r ai2-kit/doc doc || echo "Doc files are different" > diff.txt
+        diff -r ai2-kit/notebook notebook || echo "Notebook files are different" >> diff.txt
+        if [ -s diff.txt ]; then
+        echo "::set-output name=diff::true"
+        else
+        echo "::set-output name=diff::false"
+        fi
+      continue-on-error: true
+
+    - name: Commit changes
+      if: steps.compare-docs-and-notebooks.outputs.diff == 'true'
+      run: |
+        cp -r ai2-kit/doc/* doc/
+        cp -r ai2-kit/notebook/* notebook/
+
+    - name: PR if doc or notebook changed
+      if: steps.compare-docs-and-notebooks.outputs.diff == 'true'
+      uses: peter-evans/create-pull-request@v3
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        commit-message: Update doc and notebook
+        title: Update doc and notebook
+        body: |
+          This PR updates the doc and notebook to the latest version.
+        branch: update-doc-and-notebook
+        base: main
