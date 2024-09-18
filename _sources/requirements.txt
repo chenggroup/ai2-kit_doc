@@ -1,0 +1,6 @@
+ai2-kit
+sphinx
+myst_parser
+nbsphinx
+sphinxcontrib-bibtex
+pydata_sphinx_theme
