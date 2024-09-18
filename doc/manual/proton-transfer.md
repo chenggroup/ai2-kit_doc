@@ -6,7 +6,7 @@ ai2-kit algorithm proton-transfer
 
 ## Introduction
 
-The proton transfer analysis toolkit is a set of commands and Python functions to analyze proton transfer events in a trajectory file {cite}`yan2023tracking`.
+The proton transfer analysis toolkit is a set of commands and Python functions to analyze proton transfer events in a trajectory file.
 
 ## Usage
 
@@ -250,3 +250,4 @@ The output of the above command will be like below:
 
 ## Reference
 
+[Shengheng Yan, Binju Wang, and Hai Lin Journal of Chemical Theory and Computation 2023 19 (2), 448-459 DOI: 10.1021/acs.jctc.2c01097](https://pubs.acs.org/doi/10.1021/acs.jctc.2c01097)

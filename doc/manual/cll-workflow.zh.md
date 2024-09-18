@@ -362,70 +362,7 @@ ai2-kit workflow cll-mlp-training *.yml --executor hpc-cluster01 --path-prefix h
 * `--path-prefix h2o_64-run-01` 指定远程工作目录，它会在 `work_dir` 下创建一个 `h2o_64-run-01` 的目录用于存放工作流的执行结果; 
 * `--checkpoint run-01.cpkt` 会在本地生成一个checkpoint文件，用于保存工作流的执行状态，以便在执行中断后恢复执行。
 
-## 特别用例
-
-### 训练势函数以支持基于FEP的氧化还原电位计算
-
-为训练可以支持基于FEP的氧化还原电位计算的机器学习势函数，
-请使用 `deepmd` 的 `fparam` 特性，以分别拟合
-反应始态（ini）和终态（fin）势能面。
-
-并且对于始态和终态请使用不同的标签配置。
-
-以下给出需要注意的关键配置。
-
-#### 分别采用 `fep-ini` 和 `fep-fin` 属性配置 `exploration` 的 `Artifacts`
- 
-通常采用 `Artifacts` 来指定`exploration` 流程中的初始结构，例如：
-
-```yaml
-artifacts:
-  explore-h2ox64:
-    url: /path/to/h2ox64.xyz
-    attrs:
-      fep-ini:
-        dp_fparam: 0
-        cp2k:
-          input_template: !load_text cp2k-ini.inp
-      fep-fin:
-        dp_fparam: 1
-        cp2k:
-          input_template: !load_text cp2k-fin.inp
-```
-
-#### 通过 `fep-redox` 配置 LAMMPS 运行模式
-
-以下例子通过使用 `fep-redox` 模式以忽略常规 LAMMPS 配置，
-以专注于 FEP Redox 计算的。
-
-```yaml
-workflow:
-  explore:
-    lammps:
-      mode: fep-redox
-      template_vars:
-        # The fparam option of deepmd pair style
-        # The value of fparam should be consistent with the fparam in the explore artifacts
-        # doc: https://docs.deepmodeling.com/projects/deepmd/en/latest/third-party/lammps-command.html#pair-style-deepmd
-        FEP_INI_DP_OPT: fparam 0
-        FEP_FIN_DP_OPT: fparam 1
-```
-
-#### 在 `deepmd` 输入模板中配置 `numb_fparam`
-
-https://docs.deepmodeling.com/projects/deepmd/en/master/train/train-input.html
-
-TODO: example.
-
-### 训练势函数以支持基于FEP的pKa计算
-TODO
-
-### 超越 Model Deviation 的探索和筛选流程
-
-`Exploation`流程通过判断构象的最大力预测偏差是否落在`f_trust_lo`和`f_trust_hi`定义的范围内来选取。然而，这样的筛选方案仍会发现大量需要标记的结构。通过添加聚类的流程，可以改进筛选的效率，移除结构上相似的构象{cite}`Guo2023checmate`。通过在上述的`workflow.yml`中加入`asap_options: {}`，便可以启用这项功能。关于聚类的详细信息，用户可以参考[ASAP文档](https://bingqingcheng.github.io/cluster.html) {cite}`Cheng2020mapping`。
-
 ## 引用
-
-如果您使用了本工作流中的聚类筛选方法，请引用以下文章：{cite}`Guo2023checmate,Cheng2020mapping`
-
-如果您使用了LASP，请引用以下文章：{cite}`Huang2019lasp`
+如果您使用了本工作流中的LASP，请引用以下文章： 
+> Yu-Xin Guo, Yong-Bin Zhuang, Jueli Shi, Jun Cheng; ChecMatE: A workflow package to automatically generate machine learning potentials and phase diagrams for semiconductor alloys. J. Chem. Phys. 7 September 2023; 159 (9): 094801. https://doi.org/10.1063/5.0166858
+> Huang, S., Shang, C., Kang, P., Zhang, X. & Liu, Z. LASP: Fast global potential energy surface exploration. Wiley Interdiscip Rev Comput Mol Sci 9, (2019). https://doi.org/10.1002/wcms.1415

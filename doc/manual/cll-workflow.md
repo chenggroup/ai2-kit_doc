@@ -427,7 +427,7 @@ TODO: example.
 TODO
 
 ### Screening Beyond Model Deviation
-The configurations produced through the process of `Exploration` are chosen simply based on whether their Maximum Model Deviation of Forces falls within the range defined by `f_trust_lo` and `f_trust_hi`. However, such screening process still leaves a large number of configurations that require labeling. The screening{cite}`Guo2023checmate` is improved by adding an clustering procedure, which is allowed to remove structurally similar configurations. To enable this functionality, `asap_options: {}` is added in the above `workflow.yml`. For details of clustering method, users are referred to [the documentation](https://bingqingcheng.github.io/cluster.html) of ASAP {cite}`Cheng2020mapping`. 
+The configurations produced through the process of `Exploration` are chosen simply based on whether their Maximum Model Deviation of Forces falls within the range defined by `f_trust_lo` and `f_trust_hi`. However, such screening process still leaves a large number of configurations that require labeling. The screening{cite}`Guo2023checmate` is improved by adding an clustering procedure, which is allowed to remove structurally similar configurations. To enable this functionality, `asap_options: {}` is added in the above `workflow.yml`. For details of clustering method, users are referred to [the documentation](https://bingqingcheng.github.io/cluster.html) of ASAP{cite}`Cheng2020mapping`. 
 
 ## Citation
 If you use clustering methods in your research, please cite the following paper: {cite}`Guo2023checmate,Cheng2020mapping`
