@@ -36,8 +36,8 @@ jobs:
 
     - name: Update docs and notebooks
       run: |
-        cp -r ai2-kit/doc/* ./
-        cp -r ai2-kit/notebook/* ./
+        cp -r ai2-kit/doc/* ./doc/
+        cp -r ai2-kit/notebook/* ./notebook/
     
     - name: Sphinx APIDoc
       run: |
