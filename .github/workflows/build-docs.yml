@@ -33,15 +33,20 @@ jobs:
       run: |
         pip install ./ai2-kit
         pip install jupyter-book
+
+    - name: Update docs and notebooks
+      run: |
+        cp -r ai2-kit/docs/* ./
+        cp -r ai2-kit/notebooks/* ./
     
     - name: Sphinx APIDoc
       run: |
-        sphinx-apidoc -f -o ai2-kit/jupyter-book/_api/ ai2-kit/ai2_kit/ --separate
+        sphinx-apidoc -f -o _api/ ai2-kit/ai2_kit/ --separate
 
     # Build the book
     - name: Build the book
       run: |
-        jupyter-book build ai2-kit/jupyter-book/
+        jupyter-book build .
 
     # Push the book's HTML to github-pages
     - name: GitHub Pages action
@@ -50,3 +55,14 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ai2-kit/jupyter-book/_build/html
+    
+    # Commit the changes
+    - name: Get author and committer info from HEAD commit
+      uses: rlespinasse/git-commit-data-action@v1
+      if: github.ref == 'refs/heads/main'
+
+    - name: Commit changed files
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: "Update the book"
+      if: github.ref == 'refs/heads/main'
