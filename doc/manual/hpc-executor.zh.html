@@ -29,6 +29,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/autodoc_pydantic.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -143,6 +144,13 @@
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../../notebook/index.html">
     Notebooks
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../example/index.html">
+    Example
   </a>
 </li>
 
@@ -287,6 +295,13 @@ document.write(`
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../../notebook/index.html">
     Notebooks
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../example/index.html">
+    Example
   </a>
 </li>
 
@@ -614,7 +629,7 @@ document.write(`
 <li><p>提交 n 个作业脚本，每个作业脚本读取 input 中的数字计算其平方写入 output 文件中</p></li>
 <li><p>后处理：实现一个 Python 函数，在所有作业完成后读出所有文件的 output 值并求和</p></li>
 </ul>
-<p>具体的代码实现可在 <a class="reference internal" href="#../../example/script/simple-workflow.py"><span class="xref myst">simple-workflow</span></a> 中查看。</p>
+<p>具体的代码实现可在 <a class="reference download internal" download="" href="../../_downloads/10d4e4a8e35327f9bd28d8a67b97e37e/simple-workflow.py"><span class="xref download myst">simple-workflow</span></a> 中查看。</p>
 <p>从代码实现上可以看出，通过 <code class="docutils literal notranslate"><span class="pre">ai2-kit</span></code> 实现的工作流本质仍然是普通的 Python 代码，只是当需要在远程执行函数或者提交作业时才会调用到 <code class="docutils literal notranslate"><span class="pre">ai2-kit</span> <span class="pre">HPC</span> <span class="pre">executor</span></code> 提供的接口。因此，对于熟悉 Python 编码的同学上手 <code class="docutils literal notranslate"><span class="pre">ai2-kit</span></code> 并不困难。</p>
 <p>更复杂的工作流也是采用同样的思路实现，只是在此基础上增加了针对配置文件的建模和解析，以及使用条件分支和循环进行流程控制。如有兴趣可参考 <code class="docutils literal notranslate"><span class="pre">ai2-kit.workflow</span></code> 模块中的代码。</p>
 </section>

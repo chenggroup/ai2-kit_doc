@@ -29,6 +29,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/autodoc_pydantic.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -143,6 +144,13 @@
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../notebook/index.html">
     Notebooks
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../example/index.html">
+    Example
   </a>
 </li>
 
@@ -287,6 +295,13 @@ document.write(`
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../notebook/index.html">
     Notebooks
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../example/index.html">
+    Example
   </a>
 </li>
 
@@ -525,48 +540,103 @@ document.write(`
 
 </dd></dl>
 
-<dl class="py class">
+<dl class="py class pydantic_model">
 <dt class="sig sig-object py" id="ai2_kit.domain.lammps.CllLammpsContextConfig">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ai2_kit.domain.lammps.</span></span><span class="sig-name descname"><span class="pre">CllLammpsContextConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">script_template</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ai2_kit.core.script.html#ai2_kit.core.script.BashTemplate" title="ai2_kit.core.script.BashTemplate"><span class="pre">BashTemplate</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">lammps_cmd</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'lmp'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">concurrency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multi_gpus_per_job</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ai2_kit/domain/lammps.html#CllLammpsContextConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsContextConfig" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">pydantic</span> <span class="pre">model</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ai2_kit.domain.lammps.</span></span><span class="sig-name descname"><span class="pre">CllLammpsContextConfig</span></span><a class="reference internal" href="../_modules/ai2_kit/domain/lammps.html#CllLammpsContextConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsContextConfig" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="ai2_kit.core.pydantic.html#ai2_kit.core.pydantic.BaseModel" title="ai2_kit.core.pydantic.BaseModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></a></p>
-<dl class="py attribute">
+<p><details  class="autodoc_pydantic_collapsable_json">
+<summary>Show JSON schema</summary><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">   </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CllLammpsContextConfig&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;script_template&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;$ref&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#/$defs/BashTemplate&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;lammps_cmd&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;lmp&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Lammps Cmd&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;concurrency&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Concurrency&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;integer&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;multi_gpus_per_job&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Multi Gpus Per Job&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;boolean&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="nt">&quot;$defs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;BashTemplate&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;additionalProperties&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;shebang&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#!/bin/bash&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Shebang&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;header&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Header&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;setup&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Setup&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;teardown&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Teardown&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">         </span><span class="p">},</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BashTemplate&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="nt">&quot;additionalProperties&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="s2">&quot;script_template&quot;</span>
+<span class="w">   </span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</details></p><dl class="field-list simple">
+<dt class="field-odd">Config<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>extra</strong>: <em>str = forbid</em></p></li>
+</ul>
+</dd>
+<dt class="field-even">Fields<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="#ai2_kit.domain.lammps.CllLammpsContextConfig.concurrency" title="ai2_kit.domain.lammps.CllLammpsContextConfig.concurrency"><code class="xref py py-obj docutils literal notranslate"><span class="pre">concurrency</span> <span class="pre">(int)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#ai2_kit.domain.lammps.CllLammpsContextConfig.lammps_cmd" title="ai2_kit.domain.lammps.CllLammpsContextConfig.lammps_cmd"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lammps_cmd</span> <span class="pre">(str)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#ai2_kit.domain.lammps.CllLammpsContextConfig.multi_gpus_per_job" title="ai2_kit.domain.lammps.CllLammpsContextConfig.multi_gpus_per_job"><code class="xref py py-obj docutils literal notranslate"><span class="pre">multi_gpus_per_job</span> <span class="pre">(bool)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#ai2_kit.domain.lammps.CllLammpsContextConfig.script_template" title="ai2_kit.domain.lammps.CllLammpsContextConfig.script_template"><code class="xref py py-obj docutils literal notranslate"><span class="pre">script_template</span> <span class="pre">(ai2_kit.core.script.BashTemplate)</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="ai2_kit.domain.lammps.CllLammpsContextConfig.concurrency">
-<span class="sig-name descname"><span class="pre">concurrency</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsContextConfig.concurrency" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">concurrency</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsContextConfig.concurrency" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
+<dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="ai2_kit.domain.lammps.CllLammpsContextConfig.lammps_cmd">
-<span class="sig-name descname"><span class="pre">lammps_cmd</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsContextConfig.lammps_cmd" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">lammps_cmd</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'lmp'</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsContextConfig.lammps_cmd" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
-<dt class="sig sig-object py" id="ai2_kit.domain.lammps.CllLammpsContextConfig.model_computed_fields">
-<span class="sig-name descname"><span class="pre">model_computed_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ComputedFieldInfo</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsContextConfig.model_computed_fields" title="Link to this definition">#</a></dt>
-<dd><p>A dictionary of computed field names and their corresponding <cite>ComputedFieldInfo</cite> objects.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="ai2_kit.domain.lammps.CllLammpsContextConfig.model_config">
-<span class="sig-name descname"><span class="pre">model_config</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">ConfigDict</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'extra':</span> <span class="pre">'forbid'}</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsContextConfig.model_config" title="Link to this definition">#</a></dt>
-<dd><p>Configuration for the model, should be a dictionary conforming to [<cite>ConfigDict</cite>][pydantic.config.ConfigDict].</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="ai2_kit.domain.lammps.CllLammpsContextConfig.model_fields">
-<span class="sig-name descname"><span class="pre">model_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'concurrency':</span> <span class="pre">FieldInfo(annotation=int,</span> <span class="pre">required=False,</span> <span class="pre">default=5),</span> <span class="pre">'lammps_cmd':</span> <span class="pre">FieldInfo(annotation=str,</span> <span class="pre">required=False,</span> <span class="pre">default='lmp'),</span> <span class="pre">'multi_gpus_per_job':</span> <span class="pre">FieldInfo(annotation=bool,</span> <span class="pre">required=False,</span> <span class="pre">default=False),</span> <span class="pre">'script_template':</span> <span class="pre">FieldInfo(annotation=BashTemplate,</span> <span class="pre">required=True)}</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsContextConfig.model_fields" title="Link to this definition">#</a></dt>
-<dd><p>Metadata about the fields defined on the model,
-mapping of field names to [<cite>FieldInfo</cite>][pydantic.fields.FieldInfo].</p>
-<p>This replaces <cite>Model.__fields__</cite> from Pydantic V1.</p>
-</dd></dl>
-
-<dl class="py attribute">
+<dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="ai2_kit.domain.lammps.CllLammpsContextConfig.multi_gpus_per_job">
-<span class="sig-name descname"><span class="pre">multi_gpus_per_job</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsContextConfig.multi_gpus_per_job" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">multi_gpus_per_job</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsContextConfig.multi_gpus_per_job" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
+<dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="ai2_kit.domain.lammps.CllLammpsContextConfig.script_template">
-<span class="sig-name descname"><span class="pre">script_template</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="ai2_kit.core.script.html#ai2_kit.core.script.BashTemplate" title="ai2_kit.core.script.BashTemplate"><span class="pre">BashTemplate</span></a></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsContextConfig.script_template" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">script_template</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="ai2_kit.core.script.html#ai2_kit.core.script.BashTemplate" title="ai2_kit.core.script.BashTemplate"><span class="pre">BashTemplate</span></a></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsContextConfig.script_template" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -622,18 +692,251 @@ mapping of field names to [<cite>FieldInfo</cite>][pydantic.fields.FieldInfo].</
 
 </dd></dl>
 
-<dl class="py class">
+<dl class="py class pydantic_model">
 <dt class="sig sig-object py" id="ai2_kit.domain.lammps.CllLammpsInputConfig">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ai2_kit.domain.lammps.</span></span><span class="sig-name descname"><span class="pre">CllLammpsInputConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_wise</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">explore_vars</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Mapping</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">broadcast_vars</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Mapping</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preset_template</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_template</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">template_vars</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Mapping</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plumed_config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">system_files</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ensemble</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'nvt'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'npt'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'npt-i'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'npt-a'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'npt-iso'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'npt-aniso'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'npt-t'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'npt-tri'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'npt-x'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'npt-y'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'npt-z'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'nve'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'csvr'</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fix_statement</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_pbc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nsteps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestep</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.0005</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_freq</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_error</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type_alias</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Mapping</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_ff</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fep_opts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#ai2_kit.domain.lammps.FepOptions" title="ai2_kit.domain.lammps.FepOptions"><span class="pre">FepOptions</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">FepOptions(ini_ghost_types=[],</span> <span class="pre">fin_ghost_types=[])</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ai2_kit/domain/lammps.html#CllLammpsInputConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsInputConfig" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">pydantic</span> <span class="pre">model</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ai2_kit.domain.lammps.</span></span><span class="sig-name descname"><span class="pre">CllLammpsInputConfig</span></span><a class="reference internal" href="../_modules/ai2_kit/domain/lammps.html#CllLammpsInputConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsInputConfig" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="ai2_kit.core.pydantic.html#ai2_kit.core.pydantic.BaseModel" title="ai2_kit.core.pydantic.BaseModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></a></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="ai2_kit.domain.lammps.CllLammpsInputConfig.assert_var">
-<span class="sig-name descname"><span class="pre">assert_var</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">var</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ai2_kit/domain/lammps.html#CllLammpsInputConfig.assert_var"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.assert_var" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
+<p><details  class="autodoc_pydantic_collapsable_json">
+<summary>Show JSON schema</summary><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">   </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CllLammpsInputConfig&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;n_wise&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;N Wise&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;integer&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;explore_vars&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;additionalProperties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;array&quot;</span>
+<span class="w">         </span><span class="p">},</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Explore Vars&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;broadcast_vars&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Broadcast Vars&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;preset_template&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;anyOf&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;null&quot;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">         </span><span class="p">],</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Preset Template&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;input_template&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;anyOf&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;null&quot;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">         </span><span class="p">],</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Input Template&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;template_vars&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Template Vars&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;plumed_config&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;anyOf&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;null&quot;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">         </span><span class="p">],</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Plumed Config&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;system_files&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">         </span><span class="p">},</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;System Files&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;array&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;ensemble&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;anyOf&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;enum&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                  </span><span class="s2">&quot;nvt&quot;</span><span class="p">,</span>
+<span class="w">                  </span><span class="s2">&quot;npt&quot;</span><span class="p">,</span>
+<span class="w">                  </span><span class="s2">&quot;npt-i&quot;</span><span class="p">,</span>
+<span class="w">                  </span><span class="s2">&quot;npt-a&quot;</span><span class="p">,</span>
+<span class="w">                  </span><span class="s2">&quot;npt-iso&quot;</span><span class="p">,</span>
+<span class="w">                  </span><span class="s2">&quot;npt-aniso&quot;</span><span class="p">,</span>
+<span class="w">                  </span><span class="s2">&quot;npt-t&quot;</span><span class="p">,</span>
+<span class="w">                  </span><span class="s2">&quot;npt-tri&quot;</span><span class="p">,</span>
+<span class="w">                  </span><span class="s2">&quot;npt-x&quot;</span><span class="p">,</span>
+<span class="w">                  </span><span class="s2">&quot;npt-y&quot;</span><span class="p">,</span>
+<span class="w">                  </span><span class="s2">&quot;npt-z&quot;</span><span class="p">,</span>
+<span class="w">                  </span><span class="s2">&quot;nve&quot;</span><span class="p">,</span>
+<span class="w">                  </span><span class="s2">&quot;csvr&quot;</span>
+<span class="w">               </span><span class="p">],</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;null&quot;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">         </span><span class="p">],</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ensemble&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;fix_statement&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;anyOf&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;null&quot;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">         </span><span class="p">],</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Fix Statement&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;no_pbc&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;No Pbc&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;boolean&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;nsteps&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Nsteps&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;integer&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;timestep&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0005</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Timestep&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;number&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;sample_freq&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Sample Freq&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;integer&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;ignore_error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ignore Error&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;boolean&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;type_alias&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;additionalProperties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;array&quot;</span>
+<span class="w">         </span><span class="p">},</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Type Alias&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;custom_ff&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;anyOf&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;null&quot;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">         </span><span class="p">],</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Custom Ff&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;fep_opts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;allOf&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;$ref&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#/$defs/FepOptions&quot;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">         </span><span class="p">],</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;ini_ghost_types&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">            </span><span class="nt">&quot;fin_ghost_types&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+<span class="w">         </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="nt">&quot;$defs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;FepOptions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;additionalProperties&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;ini_ghost_types&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">               </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">               </span><span class="p">},</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ini Ghost Types&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;array&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;fin_ghost_types&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">               </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">               </span><span class="p">},</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Fin Ghost Types&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;array&quot;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">         </span><span class="p">},</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FepOptions&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="nt">&quot;additionalProperties&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="s2">&quot;explore_vars&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;system_files&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;nsteps&quot;</span>
+<span class="w">   </span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</details></p><dl class="field-list simple">
+<dt class="field-odd">Config<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>extra</strong>: <em>str = forbid</em></p></li>
+</ul>
+</dd>
+<dt class="field-even">Fields<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.broadcast_vars" title="ai2_kit.domain.lammps.CllLammpsInputConfig.broadcast_vars"><code class="xref py py-obj docutils literal notranslate"><span class="pre">broadcast_vars</span> <span class="pre">(Mapping[str,</span> <span class="pre">Any])</span></code></a></p></li>
+<li><p><a class="reference internal" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.custom_ff" title="ai2_kit.domain.lammps.CllLammpsInputConfig.custom_ff"><code class="xref py py-obj docutils literal notranslate"><span class="pre">custom_ff</span> <span class="pre">(str</span> <span class="pre">|</span> <span class="pre">None)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.ensemble" title="ai2_kit.domain.lammps.CllLammpsInputConfig.ensemble"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ensemble</span> <span class="pre">(Literal['nvt',</span> <span class="pre">'npt',</span> <span class="pre">'npt-i',</span> <span class="pre">'npt-a',</span> <span class="pre">'npt-iso',</span> <span class="pre">'npt-aniso',</span> <span class="pre">'npt-t',</span> <span class="pre">'npt-tri',</span> <span class="pre">'npt-x',</span> <span class="pre">'npt-y',</span> <span class="pre">'npt-z',</span> <span class="pre">'nve',</span> <span class="pre">'csvr']</span> <span class="pre">|</span> <span class="pre">None)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.explore_vars" title="ai2_kit.domain.lammps.CllLammpsInputConfig.explore_vars"><code class="xref py py-obj docutils literal notranslate"><span class="pre">explore_vars</span> <span class="pre">(Mapping[str,</span> <span class="pre">List[Any]])</span></code></a></p></li>
+<li><p><a class="reference internal" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.fep_opts" title="ai2_kit.domain.lammps.CllLammpsInputConfig.fep_opts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fep_opts</span> <span class="pre">(ai2_kit.domain.lammps.FepOptions)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.fix_statement" title="ai2_kit.domain.lammps.CllLammpsInputConfig.fix_statement"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fix_statement</span> <span class="pre">(str</span> <span class="pre">|</span> <span class="pre">None)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.ignore_error" title="ai2_kit.domain.lammps.CllLammpsInputConfig.ignore_error"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ignore_error</span> <span class="pre">(bool)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.input_template" title="ai2_kit.domain.lammps.CllLammpsInputConfig.input_template"><code class="xref py py-obj docutils literal notranslate"><span class="pre">input_template</span> <span class="pre">(str</span> <span class="pre">|</span> <span class="pre">None)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.n_wise" title="ai2_kit.domain.lammps.CllLammpsInputConfig.n_wise"><code class="xref py py-obj docutils literal notranslate"><span class="pre">n_wise</span> <span class="pre">(int)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.no_pbc" title="ai2_kit.domain.lammps.CllLammpsInputConfig.no_pbc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">no_pbc</span> <span class="pre">(bool)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.nsteps" title="ai2_kit.domain.lammps.CllLammpsInputConfig.nsteps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nsteps</span> <span class="pre">(int)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.plumed_config" title="ai2_kit.domain.lammps.CllLammpsInputConfig.plumed_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plumed_config</span> <span class="pre">(str</span> <span class="pre">|</span> <span class="pre">None)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.preset_template" title="ai2_kit.domain.lammps.CllLammpsInputConfig.preset_template"><code class="xref py py-obj docutils literal notranslate"><span class="pre">preset_template</span> <span class="pre">(str</span> <span class="pre">|</span> <span class="pre">None)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.sample_freq" title="ai2_kit.domain.lammps.CllLammpsInputConfig.sample_freq"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sample_freq</span> <span class="pre">(int)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.system_files" title="ai2_kit.domain.lammps.CllLammpsInputConfig.system_files"><code class="xref py py-obj docutils literal notranslate"><span class="pre">system_files</span> <span class="pre">(List[str])</span></code></a></p></li>
+<li><p><a class="reference internal" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.template_vars" title="ai2_kit.domain.lammps.CllLammpsInputConfig.template_vars"><code class="xref py py-obj docutils literal notranslate"><span class="pre">template_vars</span> <span class="pre">(Mapping[str,</span> <span class="pre">Any])</span></code></a></p></li>
+<li><p><a class="reference internal" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.timestep" title="ai2_kit.domain.lammps.CllLammpsInputConfig.timestep"><code class="xref py py-obj docutils literal notranslate"><span class="pre">timestep</span> <span class="pre">(float)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.type_alias" title="ai2_kit.domain.lammps.CllLammpsInputConfig.type_alias"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type_alias</span> <span class="pre">(Mapping[str,</span> <span class="pre">List[str]])</span></code></a></p></li>
+</ul>
+</dd>
+<dt class="field-odd">Validators<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.validate_domain" title="ai2_kit.domain.lammps.CllLammpsInputConfig.validate_domain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_domain</span></code></a> » <code class="xref py py-obj docutils literal notranslate"><span class="pre">all</span> <span class="pre">fields</span></code></p></li>
+<li><p><a class="reference internal" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.validate_explore_variants" title="ai2_kit.domain.lammps.CllLammpsInputConfig.validate_explore_variants"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_explore_variants</span></code></a> » <a class="reference internal" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.explore_vars" title="ai2_kit.domain.lammps.CllLammpsInputConfig.explore_vars"><code class="xref py py-obj docutils literal notranslate"><span class="pre">explore_vars</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="ai2_kit.domain.lammps.CllLammpsInputConfig.broadcast_vars">
-<span class="sig-name descname"><span class="pre">broadcast_vars</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Mapping</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.broadcast_vars" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">broadcast_vars</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Mapping</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.broadcast_vars" title="Link to this definition">#</a></dt>
 <dd><p>Variants to be explore by broadcast.</p>
 <p>Variables defined here won’t join the combination,
 but will be broadcasted to all combinations.</p>
@@ -641,11 +944,18 @@ but will be broadcasted to all combinations.</p>
 <p><code class="docutils literal notranslate"><span class="pre">`yaml</span>
 <span class="pre">LAMBDA_f:</span> <span class="pre">[0.0,</span> <span class="pre">0.25,</span> <span class="pre">0.5,</span> <span class="pre">0.75,</span> <span class="pre">1.0]</span>
 <span class="pre">`</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Validated by<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.validate_domain" title="ai2_kit.domain.lammps.CllLammpsInputConfig.validate_domain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_domain</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="ai2_kit.domain.lammps.CllLammpsInputConfig.custom_ff">
-<span class="sig-name descname"><span class="pre">custom_ff</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.custom_ff" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">custom_ff</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.custom_ff" title="Link to this definition">#</a></dt>
 <dd><p>Allow user to set custom force field. If set, the custom force field will be used instead of the default one.
 The use can use $$DP_MODELS to reference the deepmd models, and $$SPECORDER to reference the atom type order.
 For example:</p>
@@ -656,16 +966,30 @@ buck/coul/long 10.0 10.0</p>
 </dl>
 <p>pair_coeff  * * deepmd 1 $$SPECORDER
 pair_coeff  * * buck/coul/long 10.0 10.0</p>
+<dl class="field-list simple">
+<dt class="field-odd">Validated by<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.validate_domain" title="ai2_kit.domain.lammps.CllLammpsInputConfig.validate_domain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_domain</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="ai2_kit.domain.lammps.CllLammpsInputConfig.ensemble">
-<span class="sig-name descname"><span class="pre">ensemble</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'nvt'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'npt'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'npt-i'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'npt-a'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'npt-iso'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'npt-aniso'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'npt-t'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'npt-tri'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'npt-x'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'npt-y'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'npt-z'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'nve'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'csvr'</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.ensemble" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ensemble</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'nvt'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'npt'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'npt-i'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'npt-a'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'npt-iso'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'npt-aniso'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'npt-t'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'npt-tri'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'npt-x'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'npt-y'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'npt-z'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'nve'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'csvr'</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.ensemble" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Validated by<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.validate_domain" title="ai2_kit.domain.lammps.CllLammpsInputConfig.validate_domain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_domain</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
-<dl class="py attribute">
+<dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="ai2_kit.domain.lammps.CllLammpsInputConfig.explore_vars">
-<span class="sig-name descname"><span class="pre">explore_vars</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Mapping</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.explore_vars" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">explore_vars</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Mapping</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.explore_vars" title="Link to this definition">#</a></dt>
 <dd><p>Variants to be explore by full combination or n_wise combination.</p>
 <p>Variables defined here will become <strong>LAMMPS variables</strong>.
 If multiple value has been set for a variable,
@@ -676,108 +1000,187 @@ For example,</p>
 <span class="pre">PRES:</span> <span class="pre">1</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">#</span> <span class="pre">Can</span> <span class="pre">be</span> <span class="pre">a</span> <span class="pre">vector,</span> <span class="pre">e.g.</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span>
 <span class="pre">`</span></code>
 Then you can reference them in the LAMMPS input template as ${TEMP}, ${LAMBDA_f}, ${N_STEPS}, etc.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Validated by<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.validate_domain" title="ai2_kit.domain.lammps.CllLammpsInputConfig.validate_domain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_domain</span></code></a></p></li>
+<li><p><a class="reference internal" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.validate_explore_variants" title="ai2_kit.domain.lammps.CllLammpsInputConfig.validate_explore_variants"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_explore_variants</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="ai2_kit.domain.lammps.CllLammpsInputConfig.fep_opts">
-<span class="sig-name descname"><span class="pre">fep_opts</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#ai2_kit.domain.lammps.FepOptions" title="ai2_kit.domain.lammps.FepOptions"><span class="pre">FepOptions</span></a></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.fep_opts" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fep_opts</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#ai2_kit.domain.lammps.FepOptions" title="ai2_kit.domain.lammps.FepOptions"><span class="pre">FepOptions</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">FepOptions(ini_ghost_types=[],</span> <span class="pre">fin_ghost_types=[])</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.fep_opts" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Validated by<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.validate_domain" title="ai2_kit.domain.lammps.CllLammpsInputConfig.validate_domain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_domain</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
-<dl class="py attribute">
+<dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="ai2_kit.domain.lammps.CllLammpsInputConfig.fix_statement">
-<span class="sig-name descname"><span class="pre">fix_statement</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.fix_statement" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fix_statement</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.fix_statement" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Validated by<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.validate_domain" title="ai2_kit.domain.lammps.CllLammpsInputConfig.validate_domain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_domain</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
-<dl class="py attribute">
+<dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="ai2_kit.domain.lammps.CllLammpsInputConfig.ignore_error">
-<span class="sig-name descname"><span class="pre">ignore_error</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.ignore_error" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ignore_error</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.ignore_error" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Validated by<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.validate_domain" title="ai2_kit.domain.lammps.CllLammpsInputConfig.validate_domain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_domain</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
-<dl class="py attribute">
+<dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="ai2_kit.domain.lammps.CllLammpsInputConfig.input_template">
-<span class="sig-name descname"><span class="pre">input_template</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.input_template" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">input_template</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.input_template" title="Link to this definition">#</a></dt>
 <dd><p>LAMMPS input template file content.
 If set, the preset_template will be ignored.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Validated by<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.validate_domain" title="ai2_kit.domain.lammps.CllLammpsInputConfig.validate_domain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_domain</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="py attribute">
-<dt class="sig sig-object py" id="ai2_kit.domain.lammps.CllLammpsInputConfig.model_computed_fields">
-<span class="sig-name descname"><span class="pre">model_computed_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ComputedFieldInfo</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.model_computed_fields" title="Link to this definition">#</a></dt>
-<dd><p>A dictionary of computed field names and their corresponding <cite>ComputedFieldInfo</cite> objects.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="ai2_kit.domain.lammps.CllLammpsInputConfig.model_config">
-<span class="sig-name descname"><span class="pre">model_config</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">ConfigDict</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'extra':</span> <span class="pre">'forbid'}</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.model_config" title="Link to this definition">#</a></dt>
-<dd><p>Configuration for the model, should be a dictionary conforming to [<cite>ConfigDict</cite>][pydantic.config.ConfigDict].</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="ai2_kit.domain.lammps.CllLammpsInputConfig.model_fields">
-<span class="sig-name descname"><span class="pre">model_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'broadcast_vars':</span> <span class="pre">FieldInfo(annotation=Mapping[str,</span> <span class="pre">Any],</span> <span class="pre">required=False,</span> <span class="pre">default={}),</span> <span class="pre">'custom_ff':</span> <span class="pre">FieldInfo(annotation=Union[str,</span> <span class="pre">NoneType],</span> <span class="pre">required=False,</span> <span class="pre">default=None),</span> <span class="pre">'ensemble':</span> <span class="pre">FieldInfo(annotation=Union[Literal['nvt',</span> <span class="pre">'npt',</span> <span class="pre">'npt-i',</span> <span class="pre">'npt-a',</span> <span class="pre">'npt-iso',</span> <span class="pre">'npt-aniso',</span> <span class="pre">'npt-t',</span> <span class="pre">'npt-tri',</span> <span class="pre">'npt-x',</span> <span class="pre">'npt-y',</span> <span class="pre">'npt-z',</span> <span class="pre">'nve',</span> <span class="pre">'csvr'],</span> <span class="pre">NoneType],</span> <span class="pre">required=False,</span> <span class="pre">default=None),</span> <span class="pre">'explore_vars':</span> <span class="pre">FieldInfo(annotation=Mapping[str,</span> <span class="pre">List[Any]],</span> <span class="pre">required=True),</span> <span class="pre">'fep_opts':</span> <span class="pre">FieldInfo(annotation=FepOptions,</span> <span class="pre">required=False,</span> <span class="pre">default=FepOptions(ini_ghost_types=[],</span> <span class="pre">fin_ghost_types=[])),</span> <span class="pre">'fix_statement':</span> <span class="pre">FieldInfo(annotation=Union[str,</span> <span class="pre">NoneType],</span> <span class="pre">required=False,</span> <span class="pre">default=None),</span> <span class="pre">'ignore_error':</span> <span class="pre">FieldInfo(annotation=bool,</span> <span class="pre">required=False,</span> <span class="pre">default=False),</span> <span class="pre">'input_template':</span> <span class="pre">FieldInfo(annotation=Union[str,</span> <span class="pre">NoneType],</span> <span class="pre">required=False,</span> <span class="pre">default=None),</span> <span class="pre">'n_wise':</span> <span class="pre">FieldInfo(annotation=int,</span> <span class="pre">required=False,</span> <span class="pre">default=0),</span> <span class="pre">'no_pbc':</span> <span class="pre">FieldInfo(annotation=bool,</span> <span class="pre">required=False,</span> <span class="pre">default=False),</span> <span class="pre">'nsteps':</span> <span class="pre">FieldInfo(annotation=int,</span> <span class="pre">required=True),</span> <span class="pre">'plumed_config':</span> <span class="pre">FieldInfo(annotation=Union[str,</span> <span class="pre">NoneType],</span> <span class="pre">required=False,</span> <span class="pre">default=None),</span> <span class="pre">'preset_template':</span> <span class="pre">FieldInfo(annotation=Union[str,</span> <span class="pre">NoneType],</span> <span class="pre">required=False,</span> <span class="pre">default=None),</span> <span class="pre">'sample_freq':</span> <span class="pre">FieldInfo(annotation=int,</span> <span class="pre">required=False,</span> <span class="pre">default=100),</span> <span class="pre">'system_files':</span> <span class="pre">FieldInfo(annotation=List[str],</span> <span class="pre">required=True),</span> <span class="pre">'template_vars':</span> <span class="pre">FieldInfo(annotation=Mapping[str,</span> <span class="pre">Any],</span> <span class="pre">required=False,</span> <span class="pre">default={}),</span> <span class="pre">'timestep':</span> <span class="pre">FieldInfo(annotation=float,</span> <span class="pre">required=False,</span> <span class="pre">default=0.0005),</span> <span class="pre">'type_alias':</span> <span class="pre">FieldInfo(annotation=Mapping[str,</span> <span class="pre">List[str]],</span> <span class="pre">required=False,</span> <span class="pre">default={})}</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.model_fields" title="Link to this definition">#</a></dt>
-<dd><p>Metadata about the fields defined on the model,
-mapping of field names to [<cite>FieldInfo</cite>][pydantic.fields.FieldInfo].</p>
-<p>This replaces <cite>Model.__fields__</cite> from Pydantic V1.</p>
-</dd></dl>
-
-<dl class="py attribute">
+<dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="ai2_kit.domain.lammps.CllLammpsInputConfig.n_wise">
-<span class="sig-name descname"><span class="pre">n_wise</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.n_wise" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">n_wise</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.n_wise" title="Link to this definition">#</a></dt>
 <dd><p>The way of combining variants.
 if n_wise is less than 2 or greater than total fields, the full combination will be used.
 Or else, the n_wise combination will be used.
 It is strongly recommended to use n_wise when the full combination is too large.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Validated by<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.validate_domain" title="ai2_kit.domain.lammps.CllLammpsInputConfig.validate_domain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_domain</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="ai2_kit.domain.lammps.CllLammpsInputConfig.no_pbc">
-<span class="sig-name descname"><span class="pre">no_pbc</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.no_pbc" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">no_pbc</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.no_pbc" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Validated by<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.validate_domain" title="ai2_kit.domain.lammps.CllLammpsInputConfig.validate_domain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_domain</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
-<dl class="py attribute">
+<dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="ai2_kit.domain.lammps.CllLammpsInputConfig.nsteps">
-<span class="sig-name descname"><span class="pre">nsteps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.nsteps" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">nsteps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.nsteps" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Validated by<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.validate_domain" title="ai2_kit.domain.lammps.CllLammpsInputConfig.validate_domain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_domain</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
-<dl class="py attribute">
+<dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="ai2_kit.domain.lammps.CllLammpsInputConfig.plumed_config">
-<span class="sig-name descname"><span class="pre">plumed_config</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.plumed_config" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">plumed_config</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.plumed_config" title="Link to this definition">#</a></dt>
 <dd><p>Plumed config file content.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Validated by<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.validate_domain" title="ai2_kit.domain.lammps.CllLammpsInputConfig.validate_domain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_domain</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="ai2_kit.domain.lammps.CllLammpsInputConfig.preset_template">
-<span class="sig-name descname"><span class="pre">preset_template</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.preset_template" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">preset_template</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.preset_template" title="Link to this definition">#</a></dt>
 <dd><p>Name of the preset template.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Validated by<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.validate_domain" title="ai2_kit.domain.lammps.CllLammpsInputConfig.validate_domain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_domain</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="ai2_kit.domain.lammps.CllLammpsInputConfig.sample_freq">
-<span class="sig-name descname"><span class="pre">sample_freq</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.sample_freq" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="ai2_kit.domain.lammps.CllLammpsInputConfig.system_files">
-<span class="sig-name descname"><span class="pre">system_files</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.system_files" title="Link to this definition">#</a></dt>
-<dd><p>Artifacts key of lammps input data</p>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sample_freq</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">100</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.sample_freq" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Validated by<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.validate_domain" title="ai2_kit.domain.lammps.CllLammpsInputConfig.validate_domain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_domain</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="ai2_kit.domain.lammps.CllLammpsInputConfig.system_files">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">system_files</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.system_files" title="Link to this definition">#</a></dt>
+<dd><p>Artifacts key of lammps input data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Validated by<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.validate_domain" title="ai2_kit.domain.lammps.CllLammpsInputConfig.validate_domain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_domain</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="ai2_kit.domain.lammps.CllLammpsInputConfig.template_vars">
-<span class="sig-name descname"><span class="pre">template_vars</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Mapping</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.template_vars" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">template_vars</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Mapping</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.template_vars" title="Link to this definition">#</a></dt>
 <dd><p>input_template may provide extra injection points for user to inject custom settings.
 Those value could be set here.</p>
 <p>Those vars can be referenced in the LAMMPS input template as $$VAR_NAME.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Validated by<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.validate_domain" title="ai2_kit.domain.lammps.CllLammpsInputConfig.validate_domain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_domain</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="ai2_kit.domain.lammps.CllLammpsInputConfig.timestep">
-<span class="sig-name descname"><span class="pre">timestep</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.timestep" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">timestep</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.0005</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.timestep" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Validated by<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.validate_domain" title="ai2_kit.domain.lammps.CllLammpsInputConfig.validate_domain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_domain</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
-<dl class="py attribute">
+<dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="ai2_kit.domain.lammps.CllLammpsInputConfig.type_alias">
-<span class="sig-name descname"><span class="pre">type_alias</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Mapping</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.type_alias" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">type_alias</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Mapping</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.type_alias" title="Link to this definition">#</a></dt>
 <dd><p>Type alias for atoms. For example, if you want to distinguish ghost H and H of HF molecule from other H atoms,
 you can define the alias as follows:
 <a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id3"><span class="problematic" id="id4">`</span></a>yaml
@@ -791,53 +1194,84 @@ type_alias:</p>
 set atom 1 type ${H_hf}
 set atom 2 type ${H_ghost}
 <a href="#id5"><span class="problematic" id="id6">``</span></a><a href="#id7"><span class="problematic" id="id8">`</span></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Validated by<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.validate_domain" title="ai2_kit.domain.lammps.CllLammpsInputConfig.validate_domain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_domain</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="ai2_kit.domain.lammps.CllLammpsInputConfig.assert_var">
+<span class="sig-name descname"><span class="pre">assert_var</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">var</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ai2_kit/domain/lammps.html#CllLammpsInputConfig.assert_var"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.assert_var" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method pydantic_validator">
 <dt class="sig sig-object py" id="ai2_kit.domain.lammps.CllLammpsInputConfig.validate_domain">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate_domain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ai2_kit/domain/lammps.html#CllLammpsInputConfig.validate_domain"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.validate_domain" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">validator</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate_domain</span></span><em class="autodoc_pydantic_validator_arrow property">&#160; <span class="pre">»</span>&#160; </em><em class="xref py py-obj"><span class="pre">all</span> <span class="pre">fields</span></em><a class="reference internal" href="../_modules/ai2_kit/domain/lammps.html#CllLammpsInputConfig.validate_domain"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.validate_domain" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
-<dl class="py method">
+<dl class="py method pydantic_validator">
 <dt class="sig sig-object py" id="ai2_kit.domain.lammps.CllLammpsInputConfig.validate_explore_variants">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate_explore_variants</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ai2_kit/domain/lammps.html#CllLammpsInputConfig.validate_explore_variants"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.validate_explore_variants" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">validator</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate_explore_variants</span></span><em class="autodoc_pydantic_validator_arrow property">&#160; <span class="pre">»</span>&#160; </em><a class="reference internal" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.explore_vars" title="ai2_kit.domain.lammps.CllLammpsInputConfig.explore_vars"><em class="xref py py-obj"><span class="pre">explore_vars</span></em></a><a class="reference internal" href="../_modules/ai2_kit/domain/lammps.html#CllLammpsInputConfig.validate_explore_variants"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.validate_explore_variants" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="py class">
+<dl class="py class pydantic_model">
 <dt class="sig sig-object py" id="ai2_kit.domain.lammps.FepOptions">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ai2_kit.domain.lammps.</span></span><span class="sig-name descname"><span class="pre">FepOptions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ini_ghost_types</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fin_ghost_types</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ai2_kit/domain/lammps.html#FepOptions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ai2_kit.domain.lammps.FepOptions" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">pydantic</span> <span class="pre">model</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ai2_kit.domain.lammps.</span></span><span class="sig-name descname"><span class="pre">FepOptions</span></span><a class="reference internal" href="../_modules/ai2_kit/domain/lammps.html#FepOptions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ai2_kit.domain.lammps.FepOptions" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="ai2_kit.core.pydantic.html#ai2_kit.core.pydantic.BaseModel" title="ai2_kit.core.pydantic.BaseModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></a></p>
-<dl class="py attribute">
+<p><details  class="autodoc_pydantic_collapsable_json">
+<summary>Show JSON schema</summary><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">   </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FepOptions&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;ini_ghost_types&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">         </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">         </span><span class="p">},</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ini Ghost Types&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;array&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;fin_ghost_types&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">         </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">         </span><span class="p">},</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Fin Ghost Types&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;array&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="nt">&quot;additionalProperties&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</details></p><dl class="field-list simple">
+<dt class="field-odd">Config<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>extra</strong>: <em>str = forbid</em></p></li>
+</ul>
+</dd>
+<dt class="field-even">Fields<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="#ai2_kit.domain.lammps.FepOptions.fin_ghost_types" title="ai2_kit.domain.lammps.FepOptions.fin_ghost_types"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fin_ghost_types</span> <span class="pre">(List[str])</span></code></a></p></li>
+<li><p><a class="reference internal" href="#ai2_kit.domain.lammps.FepOptions.ini_ghost_types" title="ai2_kit.domain.lammps.FepOptions.ini_ghost_types"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ini_ghost_types</span> <span class="pre">(List[str])</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="ai2_kit.domain.lammps.FepOptions.fin_ghost_types">
-<span class="sig-name descname"><span class="pre">fin_ghost_types</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#ai2_kit.domain.lammps.FepOptions.fin_ghost_types" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fin_ghost_types</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.FepOptions.fin_ghost_types" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
+<dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="ai2_kit.domain.lammps.FepOptions.ini_ghost_types">
-<span class="sig-name descname"><span class="pre">ini_ghost_types</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#ai2_kit.domain.lammps.FepOptions.ini_ghost_types" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ini_ghost_types</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.FepOptions.ini_ghost_types" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="ai2_kit.domain.lammps.FepOptions.model_computed_fields">
-<span class="sig-name descname"><span class="pre">model_computed_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ComputedFieldInfo</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.FepOptions.model_computed_fields" title="Link to this definition">#</a></dt>
-<dd><p>A dictionary of computed field names and their corresponding <cite>ComputedFieldInfo</cite> objects.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="ai2_kit.domain.lammps.FepOptions.model_config">
-<span class="sig-name descname"><span class="pre">model_config</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">ConfigDict</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'extra':</span> <span class="pre">'forbid'}</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.FepOptions.model_config" title="Link to this definition">#</a></dt>
-<dd><p>Configuration for the model, should be a dictionary conforming to [<cite>ConfigDict</cite>][pydantic.config.ConfigDict].</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="ai2_kit.domain.lammps.FepOptions.model_fields">
-<span class="sig-name descname"><span class="pre">model_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'fin_ghost_types':</span> <span class="pre">FieldInfo(annotation=List[str],</span> <span class="pre">required=False,</span> <span class="pre">default=[]),</span> <span class="pre">'ini_ghost_types':</span> <span class="pre">FieldInfo(annotation=List[str],</span> <span class="pre">required=False,</span> <span class="pre">default=[])}</span></em><a class="headerlink" href="#ai2_kit.domain.lammps.FepOptions.model_fields" title="Link to this definition">#</a></dt>
-<dd><p>Metadata about the fields defined on the model,
-mapping of field names to [<cite>FieldInfo</cite>][pydantic.fields.FieldInfo].</p>
-<p>This replaces <cite>Model.__fields__</cite> from Pydantic V1.</p>
-</dd></dl>
 
 </dd></dl>
 
@@ -951,9 +1385,6 @@ real atoms (defined in type_map), virtual atoms (defined in sel_type) and then a
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lammps.CllLammpsContextConfig"><code class="docutils literal notranslate"><span class="pre">CllLammpsContextConfig</span></code></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lammps.CllLammpsContextConfig.concurrency"><code class="docutils literal notranslate"><span class="pre">CllLammpsContextConfig.concurrency</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lammps.CllLammpsContextConfig.lammps_cmd"><code class="docutils literal notranslate"><span class="pre">CllLammpsContextConfig.lammps_cmd</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lammps.CllLammpsContextConfig.model_computed_fields"><code class="docutils literal notranslate"><span class="pre">CllLammpsContextConfig.model_computed_fields</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lammps.CllLammpsContextConfig.model_config"><code class="docutils literal notranslate"><span class="pre">CllLammpsContextConfig.model_config</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lammps.CllLammpsContextConfig.model_fields"><code class="docutils literal notranslate"><span class="pre">CllLammpsContextConfig.model_fields</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lammps.CllLammpsContextConfig.multi_gpus_per_job"><code class="docutils literal notranslate"><span class="pre">CllLammpsContextConfig.multi_gpus_per_job</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lammps.CllLammpsContextConfig.script_template"><code class="docutils literal notranslate"><span class="pre">CllLammpsContextConfig.script_template</span></code></a></li>
 </ul>
@@ -971,7 +1402,6 @@ real atoms (defined in type_map), virtual atoms (defined in sel_type) and then a
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lammps.CllLammpsInputConfig"><code class="docutils literal notranslate"><span class="pre">CllLammpsInputConfig</span></code></a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.assert_var"><code class="docutils literal notranslate"><span class="pre">CllLammpsInputConfig.assert_var()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.broadcast_vars"><code class="docutils literal notranslate"><span class="pre">CllLammpsInputConfig.broadcast_vars</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.custom_ff"><code class="docutils literal notranslate"><span class="pre">CllLammpsInputConfig.custom_ff</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.ensemble"><code class="docutils literal notranslate"><span class="pre">CllLammpsInputConfig.ensemble</span></code></a></li>
@@ -980,9 +1410,6 @@ real atoms (defined in type_map), virtual atoms (defined in sel_type) and then a
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.fix_statement"><code class="docutils literal notranslate"><span class="pre">CllLammpsInputConfig.fix_statement</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.ignore_error"><code class="docutils literal notranslate"><span class="pre">CllLammpsInputConfig.ignore_error</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.input_template"><code class="docutils literal notranslate"><span class="pre">CllLammpsInputConfig.input_template</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.model_computed_fields"><code class="docutils literal notranslate"><span class="pre">CllLammpsInputConfig.model_computed_fields</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.model_config"><code class="docutils literal notranslate"><span class="pre">CllLammpsInputConfig.model_config</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.model_fields"><code class="docutils literal notranslate"><span class="pre">CllLammpsInputConfig.model_fields</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.n_wise"><code class="docutils literal notranslate"><span class="pre">CllLammpsInputConfig.n_wise</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.no_pbc"><code class="docutils literal notranslate"><span class="pre">CllLammpsInputConfig.no_pbc</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.nsteps"><code class="docutils literal notranslate"><span class="pre">CllLammpsInputConfig.nsteps</span></code></a></li>
@@ -993,16 +1420,14 @@ real atoms (defined in type_map), virtual atoms (defined in sel_type) and then a
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.template_vars"><code class="docutils literal notranslate"><span class="pre">CllLammpsInputConfig.template_vars</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.timestep"><code class="docutils literal notranslate"><span class="pre">CllLammpsInputConfig.timestep</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.type_alias"><code class="docutils literal notranslate"><span class="pre">CllLammpsInputConfig.type_alias</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.validate_domain"><code class="docutils literal notranslate"><span class="pre">CllLammpsInputConfig.validate_domain()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.validate_explore_variants"><code class="docutils literal notranslate"><span class="pre">CllLammpsInputConfig.validate_explore_variants()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.assert_var"><code class="docutils literal notranslate"><span class="pre">CllLammpsInputConfig.assert_var()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.validate_domain"><code class="docutils literal notranslate"><span class="pre">CllLammpsInputConfig.validate_domain</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lammps.CllLammpsInputConfig.validate_explore_variants"><code class="docutils literal notranslate"><span class="pre">CllLammpsInputConfig.validate_explore_variants</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lammps.FepOptions"><code class="docutils literal notranslate"><span class="pre">FepOptions</span></code></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lammps.FepOptions.fin_ghost_types"><code class="docutils literal notranslate"><span class="pre">FepOptions.fin_ghost_types</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lammps.FepOptions.ini_ghost_types"><code class="docutils literal notranslate"><span class="pre">FepOptions.ini_ghost_types</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lammps.FepOptions.model_computed_fields"><code class="docutils literal notranslate"><span class="pre">FepOptions.model_computed_fields</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lammps.FepOptions.model_config"><code class="docutils literal notranslate"><span class="pre">FepOptions.model_config</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lammps.FepOptions.model_fields"><code class="docutils literal notranslate"><span class="pre">FepOptions.model_fields</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lammps.GenericLammpsOutput"><code class="docutils literal notranslate"><span class="pre">GenericLammpsOutput</span></code></a><ul class="visible nav section-nav flex-column">

@@ -41,7 +41,8 @@ Note that instead of running global `ai2-kit` command, you should run `./ai2-kit
 :maxdepth: 2
 
 User Guide <doc/manual/index>
-Notebooks <notebook/index.md>
+Notebooks <notebook/index>
+Example <example/index>
 API Reference <_api/modules>
 ```
 

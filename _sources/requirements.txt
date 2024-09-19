@@ -4,3 +4,4 @@ myst_parser
 nbsphinx
 sphinxcontrib-bibtex
 pydata_sphinx_theme
+autodoc_pydantic

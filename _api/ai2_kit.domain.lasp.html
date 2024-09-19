@@ -29,6 +29,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/autodoc_pydantic.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -143,6 +144,13 @@
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../notebook/index.html">
     Notebooks
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../example/index.html">
+    Example
   </a>
 </li>
 
@@ -287,6 +295,13 @@ document.write(`
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../notebook/index.html">
     Notebooks
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../example/index.html">
+    Example
   </a>
 </li>
 
@@ -525,43 +540,92 @@ document.write(`
 
 </dd></dl>
 
-<dl class="py class">
+<dl class="py class pydantic_model">
 <dt class="sig sig-object py" id="ai2_kit.domain.lasp.CllLaspContextConfig">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ai2_kit.domain.lasp.</span></span><span class="sig-name descname"><span class="pre">CllLaspContextConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lasp_cmd</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'lasp'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">script_template</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ai2_kit.core.script.html#ai2_kit.core.script.BashTemplate" title="ai2_kit.core.script.BashTemplate"><span class="pre">BashTemplate</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">concurrency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ai2_kit/domain/lasp.html#CllLaspContextConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ai2_kit.domain.lasp.CllLaspContextConfig" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">pydantic</span> <span class="pre">model</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ai2_kit.domain.lasp.</span></span><span class="sig-name descname"><span class="pre">CllLaspContextConfig</span></span><a class="reference internal" href="../_modules/ai2_kit/domain/lasp.html#CllLaspContextConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ai2_kit.domain.lasp.CllLaspContextConfig" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="ai2_kit.core.pydantic.html#ai2_kit.core.pydantic.BaseModel" title="ai2_kit.core.pydantic.BaseModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></a></p>
-<dl class="py attribute">
+<p><details  class="autodoc_pydantic_collapsable_json">
+<summary>Show JSON schema</summary><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">   </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CllLaspContextConfig&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;lasp_cmd&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;lasp&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Lasp Cmd&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;script_template&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;$ref&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#/$defs/BashTemplate&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;concurrency&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Concurrency&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;integer&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="nt">&quot;$defs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;BashTemplate&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;additionalProperties&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;shebang&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#!/bin/bash&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Shebang&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;header&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Header&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;setup&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Setup&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;teardown&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Teardown&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">         </span><span class="p">},</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BashTemplate&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="nt">&quot;additionalProperties&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="s2">&quot;script_template&quot;</span>
+<span class="w">   </span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</details></p><dl class="field-list simple">
+<dt class="field-odd">Config<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>extra</strong>: <em>str = forbid</em></p></li>
+</ul>
+</dd>
+<dt class="field-even">Fields<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="#ai2_kit.domain.lasp.CllLaspContextConfig.concurrency" title="ai2_kit.domain.lasp.CllLaspContextConfig.concurrency"><code class="xref py py-obj docutils literal notranslate"><span class="pre">concurrency</span> <span class="pre">(int)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#ai2_kit.domain.lasp.CllLaspContextConfig.lasp_cmd" title="ai2_kit.domain.lasp.CllLaspContextConfig.lasp_cmd"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lasp_cmd</span> <span class="pre">(str)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#ai2_kit.domain.lasp.CllLaspContextConfig.script_template" title="ai2_kit.domain.lasp.CllLaspContextConfig.script_template"><code class="xref py py-obj docutils literal notranslate"><span class="pre">script_template</span> <span class="pre">(ai2_kit.core.script.BashTemplate)</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="ai2_kit.domain.lasp.CllLaspContextConfig.concurrency">
-<span class="sig-name descname"><span class="pre">concurrency</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ai2_kit.domain.lasp.CllLaspContextConfig.concurrency" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">concurrency</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#ai2_kit.domain.lasp.CllLaspContextConfig.concurrency" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
+<dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="ai2_kit.domain.lasp.CllLaspContextConfig.lasp_cmd">
-<span class="sig-name descname"><span class="pre">lasp_cmd</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ai2_kit.domain.lasp.CllLaspContextConfig.lasp_cmd" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">lasp_cmd</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'lasp'</span></em><a class="headerlink" href="#ai2_kit.domain.lasp.CllLaspContextConfig.lasp_cmd" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
-<dt class="sig sig-object py" id="ai2_kit.domain.lasp.CllLaspContextConfig.model_computed_fields">
-<span class="sig-name descname"><span class="pre">model_computed_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ComputedFieldInfo</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#ai2_kit.domain.lasp.CllLaspContextConfig.model_computed_fields" title="Link to this definition">#</a></dt>
-<dd><p>A dictionary of computed field names and their corresponding <cite>ComputedFieldInfo</cite> objects.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="ai2_kit.domain.lasp.CllLaspContextConfig.model_config">
-<span class="sig-name descname"><span class="pre">model_config</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">ConfigDict</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'extra':</span> <span class="pre">'forbid'}</span></em><a class="headerlink" href="#ai2_kit.domain.lasp.CllLaspContextConfig.model_config" title="Link to this definition">#</a></dt>
-<dd><p>Configuration for the model, should be a dictionary conforming to [<cite>ConfigDict</cite>][pydantic.config.ConfigDict].</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="ai2_kit.domain.lasp.CllLaspContextConfig.model_fields">
-<span class="sig-name descname"><span class="pre">model_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'concurrency':</span> <span class="pre">FieldInfo(annotation=int,</span> <span class="pre">required=False,</span> <span class="pre">default=5),</span> <span class="pre">'lasp_cmd':</span> <span class="pre">FieldInfo(annotation=str,</span> <span class="pre">required=False,</span> <span class="pre">default='lasp'),</span> <span class="pre">'script_template':</span> <span class="pre">FieldInfo(annotation=BashTemplate,</span> <span class="pre">required=True)}</span></em><a class="headerlink" href="#ai2_kit.domain.lasp.CllLaspContextConfig.model_fields" title="Link to this definition">#</a></dt>
-<dd><p>Metadata about the fields defined on the model,
-mapping of field names to [<cite>FieldInfo</cite>][pydantic.fields.FieldInfo].</p>
-<p>This replaces <cite>Model.__fields__</cite> from Pydantic V1.</p>
-</dd></dl>
-
-<dl class="py attribute">
+<dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="ai2_kit.domain.lasp.CllLaspContextConfig.script_template">
-<span class="sig-name descname"><span class="pre">script_template</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="ai2_kit.core.script.html#ai2_kit.core.script.BashTemplate" title="ai2_kit.core.script.BashTemplate"><span class="pre">BashTemplate</span></a></em><a class="headerlink" href="#ai2_kit.domain.lasp.CllLaspContextConfig.script_template" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">script_template</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="ai2_kit.core.script.html#ai2_kit.core.script.BashTemplate" title="ai2_kit.core.script.BashTemplate"><span class="pre">BashTemplate</span></a></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#ai2_kit.domain.lasp.CllLaspContextConfig.script_template" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -597,107 +661,196 @@ mapping of field names to [<cite>FieldInfo</cite>][pydantic.fields.FieldInfo].</
 
 </dd></dl>
 
-<dl class="py class">
+<dl class="py class pydantic_model">
 <dt class="sig sig-object py" id="ai2_kit.domain.lasp.CllLaspInputConfig">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ai2_kit.domain.lasp.</span></span><span class="sig-name descname"><span class="pre">CllLaspInputConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_template</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">potential</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#ai2_kit.domain.lasp.CllLaspInputConfig.Potential" title="ai2_kit.domain.lasp.CllLaspInputConfig.Potential"><span class="pre">Potential</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">system_files</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ai2_kit/domain/lasp.html#CllLaspInputConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ai2_kit.domain.lasp.CllLaspInputConfig" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">pydantic</span> <span class="pre">model</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ai2_kit.domain.lasp.</span></span><span class="sig-name descname"><span class="pre">CllLaspInputConfig</span></span><a class="reference internal" href="../_modules/ai2_kit/domain/lasp.html#CllLaspInputConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ai2_kit.domain.lasp.CllLaspInputConfig" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="ai2_kit.core.pydantic.html#ai2_kit.core.pydantic.BaseModel" title="ai2_kit.core.pydantic.BaseModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></a></p>
-<dl class="py class">
-<dt class="sig sig-object py" id="ai2_kit.domain.lasp.CllLaspInputConfig.Potential">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Potential</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lammps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#ai2_kit.domain.lasp.CllLaspInputConfig.Potential.LammpsPotential" title="ai2_kit.domain.lasp.CllLaspInputConfig.Potential.LammpsPotential"><span class="pre">LammpsPotential</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ai2_kit/domain/lasp.html#CllLaspInputConfig.Potential"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ai2_kit.domain.lasp.CllLaspInputConfig.Potential" title="Link to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="ai2_kit.core.pydantic.html#ai2_kit.core.pydantic.BaseModel" title="ai2_kit.core.pydantic.BaseModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></a></p>
-<dl class="py class">
-<dt class="sig sig-object py" id="ai2_kit.domain.lasp.CllLaspInputConfig.Potential.LammpsPotential">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">LammpsPotential</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_template</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'units</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">metal\nboundary</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">p</span> <span class="pre">p</span> <span class="pre">p\natom_style</span>&#160;&#160;&#160;&#160;&#160; <span class="pre">atomic\natom_modify</span> <span class="pre">map</span> <span class="pre">yes\n\n$$read_data_section\n\n$$force_field_section\n\ncompute</span> <span class="pre">peratom</span> <span class="pre">all</span> <span class="pre">pressure</span> <span class="pre">NULL</span> <span class="pre">virial\n'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ai2_kit/domain/lasp.html#CllLaspInputConfig.Potential.LammpsPotential"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ai2_kit.domain.lasp.CllLaspInputConfig.Potential.LammpsPotential" title="Link to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="ai2_kit.core.pydantic.html#ai2_kit.core.pydantic.BaseModel" title="ai2_kit.core.pydantic.BaseModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></a></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="ai2_kit.domain.lasp.CllLaspInputConfig.Potential.LammpsPotential.input_template">
-<span class="sig-name descname"><span class="pre">input_template</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ai2_kit.domain.lasp.CllLaspInputConfig.Potential.LammpsPotential.input_template" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="ai2_kit.domain.lasp.CllLaspInputConfig.Potential.LammpsPotential.model_computed_fields">
-<span class="sig-name descname"><span class="pre">model_computed_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ComputedFieldInfo</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#ai2_kit.domain.lasp.CllLaspInputConfig.Potential.LammpsPotential.model_computed_fields" title="Link to this definition">#</a></dt>
-<dd><p>A dictionary of computed field names and their corresponding <cite>ComputedFieldInfo</cite> objects.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="ai2_kit.domain.lasp.CllLaspInputConfig.Potential.LammpsPotential.model_config">
-<span class="sig-name descname"><span class="pre">model_config</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">ConfigDict</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'extra':</span> <span class="pre">'forbid'}</span></em><a class="headerlink" href="#ai2_kit.domain.lasp.CllLaspInputConfig.Potential.LammpsPotential.model_config" title="Link to this definition">#</a></dt>
-<dd><p>Configuration for the model, should be a dictionary conforming to [<cite>ConfigDict</cite>][pydantic.config.ConfigDict].</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="ai2_kit.domain.lasp.CllLaspInputConfig.Potential.LammpsPotential.model_fields">
-<span class="sig-name descname"><span class="pre">model_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'input_template':</span> <span class="pre">FieldInfo(annotation=str,</span> <span class="pre">required=False,</span> <span class="pre">default='units</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">metal\nboundary</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">p</span> <span class="pre">p</span> <span class="pre">p\natom_style</span>&#160;&#160;&#160;&#160;&#160; <span class="pre">atomic\natom_modify</span> <span class="pre">map</span> <span class="pre">yes\n\n$$read_data_section\n\n$$force_field_section\n\ncompute</span> <span class="pre">peratom</span> <span class="pre">all</span> <span class="pre">pressure</span> <span class="pre">NULL</span> <span class="pre">virial\n')}</span></em><a class="headerlink" href="#ai2_kit.domain.lasp.CllLaspInputConfig.Potential.LammpsPotential.model_fields" title="Link to this definition">#</a></dt>
-<dd><p>Metadata about the fields defined on the model,
-mapping of field names to [<cite>FieldInfo</cite>][pydantic.fields.FieldInfo].</p>
-<p>This replaces <cite>Model.__fields__</cite> from Pydantic V1.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="ai2_kit.domain.lasp.CllLaspInputConfig.Potential.lammps">
-<span class="sig-name descname"><span class="pre">lammps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#ai2_kit.domain.lasp.CllLaspInputConfig.Potential.LammpsPotential" title="ai2_kit.domain.lasp.CllLaspInputConfig.Potential.LammpsPotential"><span class="pre">LammpsPotential</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#ai2_kit.domain.lasp.CllLaspInputConfig.Potential.lammps" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="ai2_kit.domain.lasp.CllLaspInputConfig.Potential.model_computed_fields">
-<span class="sig-name descname"><span class="pre">model_computed_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ComputedFieldInfo</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#ai2_kit.domain.lasp.CllLaspInputConfig.Potential.model_computed_fields" title="Link to this definition">#</a></dt>
-<dd><p>A dictionary of computed field names and their corresponding <cite>ComputedFieldInfo</cite> objects.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="ai2_kit.domain.lasp.CllLaspInputConfig.Potential.model_config">
-<span class="sig-name descname"><span class="pre">model_config</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">ConfigDict</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'extra':</span> <span class="pre">'forbid'}</span></em><a class="headerlink" href="#ai2_kit.domain.lasp.CllLaspInputConfig.Potential.model_config" title="Link to this definition">#</a></dt>
-<dd><p>Configuration for the model, should be a dictionary conforming to [<cite>ConfigDict</cite>][pydantic.config.ConfigDict].</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="ai2_kit.domain.lasp.CllLaspInputConfig.Potential.model_fields">
-<span class="sig-name descname"><span class="pre">model_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'lammps':</span> <span class="pre">FieldInfo(annotation=Union[CllLaspInputConfig.Potential.LammpsPotential,</span> <span class="pre">NoneType],</span> <span class="pre">required=False,</span> <span class="pre">default=None)}</span></em><a class="headerlink" href="#ai2_kit.domain.lasp.CllLaspInputConfig.Potential.model_fields" title="Link to this definition">#</a></dt>
-<dd><p>Metadata about the fields defined on the model,
-mapping of field names to [<cite>FieldInfo</cite>][pydantic.fields.FieldInfo].</p>
-<p>This replaces <cite>Model.__fields__</cite> from Pydantic V1.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py attribute">
+<p><details  class="autodoc_pydantic_collapsable_json">
+<summary>Show JSON schema</summary><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">   </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CllLaspInputConfig&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;input_template&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Input Template&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;potential&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;$ref&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#/$defs/Potential&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;system_files&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">         </span><span class="p">},</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;System Files&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;array&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="nt">&quot;$defs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;LammpsPotential&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;additionalProperties&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;input_template&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;units           metal\nboundary        p p p\natom_style      atomic\natom_modify map yes\n\n$$read_data_section\n\n$$force_field_section\n\ncompute peratom all pressure NULL virial\n&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Input Template&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">         </span><span class="p">},</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LammpsPotential&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;Potential&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;additionalProperties&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;lammps&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;anyOf&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                  </span><span class="p">{</span>
+<span class="w">                     </span><span class="nt">&quot;$ref&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#/$defs/LammpsPotential&quot;</span>
+<span class="w">                  </span><span class="p">},</span>
+<span class="w">                  </span><span class="p">{</span>
+<span class="w">                     </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;null&quot;</span>
+<span class="w">                  </span><span class="p">}</span>
+<span class="w">               </span><span class="p">],</span>
+<span class="w">               </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">         </span><span class="p">},</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Potential&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="nt">&quot;additionalProperties&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="s2">&quot;input_template&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;potential&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;system_files&quot;</span>
+<span class="w">   </span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</details></p><dl class="field-list simple">
+<dt class="field-odd">Config<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>extra</strong>: <em>str = forbid</em></p></li>
+</ul>
+</dd>
+<dt class="field-even">Fields<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="#ai2_kit.domain.lasp.CllLaspInputConfig.input_template" title="ai2_kit.domain.lasp.CllLaspInputConfig.input_template"><code class="xref py py-obj docutils literal notranslate"><span class="pre">input_template</span> <span class="pre">(dict)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#ai2_kit.domain.lasp.CllLaspInputConfig.potential" title="ai2_kit.domain.lasp.CllLaspInputConfig.potential"><code class="xref py py-obj docutils literal notranslate"><span class="pre">potential</span> <span class="pre">(ai2_kit.domain.lasp.CllLaspInputConfig.Potential)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#ai2_kit.domain.lasp.CllLaspInputConfig.system_files" title="ai2_kit.domain.lasp.CllLaspInputConfig.system_files"><code class="xref py py-obj docutils literal notranslate"><span class="pre">system_files</span> <span class="pre">(List[str])</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="ai2_kit.domain.lasp.CllLaspInputConfig.input_template">
-<span class="sig-name descname"><span class="pre">input_template</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#ai2_kit.domain.lasp.CllLaspInputConfig.input_template" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">input_template</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#ai2_kit.domain.lasp.CllLaspInputConfig.input_template" title="Link to this definition">#</a></dt>
 <dd><p>Input template for LASP</p>
 </dd></dl>
 
-<dl class="py attribute">
-<dt class="sig sig-object py" id="ai2_kit.domain.lasp.CllLaspInputConfig.model_computed_fields">
-<span class="sig-name descname"><span class="pre">model_computed_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ComputedFieldInfo</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#ai2_kit.domain.lasp.CllLaspInputConfig.model_computed_fields" title="Link to this definition">#</a></dt>
-<dd><p>A dictionary of computed field names and their corresponding <cite>ComputedFieldInfo</cite> objects.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="ai2_kit.domain.lasp.CllLaspInputConfig.model_config">
-<span class="sig-name descname"><span class="pre">model_config</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">ConfigDict</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'extra':</span> <span class="pre">'forbid'}</span></em><a class="headerlink" href="#ai2_kit.domain.lasp.CllLaspInputConfig.model_config" title="Link to this definition">#</a></dt>
-<dd><p>Configuration for the model, should be a dictionary conforming to [<cite>ConfigDict</cite>][pydantic.config.ConfigDict].</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="ai2_kit.domain.lasp.CllLaspInputConfig.model_fields">
-<span class="sig-name descname"><span class="pre">model_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'input_template':</span> <span class="pre">FieldInfo(annotation=dict,</span> <span class="pre">required=True),</span> <span class="pre">'potential':</span> <span class="pre">FieldInfo(annotation=CllLaspInputConfig.Potential,</span> <span class="pre">required=True),</span> <span class="pre">'system_files':</span> <span class="pre">FieldInfo(annotation=List[str],</span> <span class="pre">required=True)}</span></em><a class="headerlink" href="#ai2_kit.domain.lasp.CllLaspInputConfig.model_fields" title="Link to this definition">#</a></dt>
-<dd><p>Metadata about the fields defined on the model,
-mapping of field names to [<cite>FieldInfo</cite>][pydantic.fields.FieldInfo].</p>
-<p>This replaces <cite>Model.__fields__</cite> from Pydantic V1.</p>
-</dd></dl>
-
-<dl class="py attribute">
+<dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="ai2_kit.domain.lasp.CllLaspInputConfig.potential">
-<span class="sig-name descname"><span class="pre">potential</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#ai2_kit.domain.lasp.CllLaspInputConfig.Potential" title="ai2_kit.domain.lasp.CllLaspInputConfig.Potential"><span class="pre">Potential</span></a></em><a class="headerlink" href="#ai2_kit.domain.lasp.CllLaspInputConfig.potential" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">potential</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#ai2_kit.domain.lasp.CllLaspInputConfig.Potential" title="ai2_kit.domain.lasp.CllLaspInputConfig.Potential"><span class="pre">Potential</span></a></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#ai2_kit.domain.lasp.CllLaspInputConfig.potential" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
+<dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="ai2_kit.domain.lasp.CllLaspInputConfig.system_files">
-<span class="sig-name descname"><span class="pre">system_files</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#ai2_kit.domain.lasp.CllLaspInputConfig.system_files" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">system_files</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#ai2_kit.domain.lasp.CllLaspInputConfig.system_files" title="Link to this definition">#</a></dt>
 <dd><p>Initial system files to explore</p>
+</dd></dl>
+
+<dl class="py class pydantic_model">
+<dt class="sig sig-object py" id="ai2_kit.domain.lasp.CllLaspInputConfig.Potential">
+<em class="property"><span class="pre">pydantic</span> <span class="pre">model</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Potential</span></span><a class="reference internal" href="../_modules/ai2_kit/domain/lasp.html#CllLaspInputConfig.Potential"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ai2_kit.domain.lasp.CllLaspInputConfig.Potential" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="ai2_kit.core.pydantic.html#ai2_kit.core.pydantic.BaseModel" title="ai2_kit.core.pydantic.BaseModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></a></p>
+<p><details  class="autodoc_pydantic_collapsable_json">
+<summary>Show JSON schema</summary><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">   </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Potential&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;lammps&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;anyOf&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;$ref&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#/$defs/LammpsPotential&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;null&quot;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">         </span><span class="p">],</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="nt">&quot;$defs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;LammpsPotential&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;additionalProperties&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;input_template&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;units           metal\nboundary        p p p\natom_style      atomic\natom_modify map yes\n\n$$read_data_section\n\n$$force_field_section\n\ncompute peratom all pressure NULL virial\n&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Input Template&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">         </span><span class="p">},</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LammpsPotential&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="nt">&quot;additionalProperties&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</details></p><dl class="field-list simple">
+<dt class="field-odd">Config<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>extra</strong>: <em>str = forbid</em></p></li>
+</ul>
+</dd>
+<dt class="field-even">Fields<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">lammps</span> <span class="pre">(ai2_kit.domain.lasp.CllLaspInputConfig.Potential.LammpsPotential</span> <span class="pre">|</span> <span class="pre">None)</span></code></p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="ai2_kit.domain.lasp.CllLaspInputConfig.Potential.lammps">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">lammps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#ai2_kit.domain.lasp.CllLaspInputConfig.Potential.LammpsPotential" title="ai2_kit.domain.lasp.CllLaspInputConfig.Potential.LammpsPotential"><span class="pre">LammpsPotential</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#ai2_kit.domain.lasp.CllLaspInputConfig.Potential.lammps" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py class pydantic_model">
+<dt class="sig sig-object py" id="ai2_kit.domain.lasp.CllLaspInputConfig.Potential.LammpsPotential">
+<em class="property"><span class="pre">pydantic</span> <span class="pre">model</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">LammpsPotential</span></span><a class="reference internal" href="../_modules/ai2_kit/domain/lasp.html#CllLaspInputConfig.Potential.LammpsPotential"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ai2_kit.domain.lasp.CllLaspInputConfig.Potential.LammpsPotential" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="ai2_kit.core.pydantic.html#ai2_kit.core.pydantic.BaseModel" title="ai2_kit.core.pydantic.BaseModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></a></p>
+<p><details  class="autodoc_pydantic_collapsable_json">
+<summary>Show JSON schema</summary><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">   </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LammpsPotential&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;input_template&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;units           metal\nboundary        p p p\natom_style      atomic\natom_modify map yes\n\n$$read_data_section\n\n$$force_field_section\n\ncompute peratom all pressure NULL virial\n&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Input Template&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="nt">&quot;additionalProperties&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</details></p><dl class="field-list simple">
+<dt class="field-odd">Config<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>extra</strong>: <em>str = forbid</em></p></li>
+</ul>
+</dd>
+<dt class="field-even">Fields<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">input_template</span> <span class="pre">(str)</span></code></p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="ai2_kit.domain.lasp.CllLaspInputConfig.Potential.LammpsPotential.input_template">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">input_template</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'units</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">metal\nboundary</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">p</span> <span class="pre">p</span> <span class="pre">p\natom_style</span>&#160;&#160;&#160;&#160;&#160; <span class="pre">atomic\natom_modify</span> <span class="pre">map</span> <span class="pre">yes\n\n$$read_data_section\n\n$$force_field_section\n\ncompute</span> <span class="pre">peratom</span> <span class="pre">all</span> <span class="pre">pressure</span> <span class="pre">NULL</span> <span class="pre">virial\n'</span></em><a class="headerlink" href="#ai2_kit.domain.lasp.CllLaspInputConfig.Potential.LammpsPotential.input_template" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </dd></dl>
 
 </dd></dl>
@@ -813,9 +966,6 @@ we need to use the result of lasp.out for alignment.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lasp.CllLaspContextConfig"><code class="docutils literal notranslate"><span class="pre">CllLaspContextConfig</span></code></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lasp.CllLaspContextConfig.concurrency"><code class="docutils literal notranslate"><span class="pre">CllLaspContextConfig.concurrency</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lasp.CllLaspContextConfig.lasp_cmd"><code class="docutils literal notranslate"><span class="pre">CllLaspContextConfig.lasp_cmd</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lasp.CllLaspContextConfig.model_computed_fields"><code class="docutils literal notranslate"><span class="pre">CllLaspContextConfig.model_computed_fields</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lasp.CllLaspContextConfig.model_config"><code class="docutils literal notranslate"><span class="pre">CllLaspContextConfig.model_config</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lasp.CllLaspContextConfig.model_fields"><code class="docutils literal notranslate"><span class="pre">CllLaspContextConfig.model_fields</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lasp.CllLaspContextConfig.script_template"><code class="docutils literal notranslate"><span class="pre">CllLaspContextConfig.script_template</span></code></a></li>
 </ul>
 </li>
@@ -828,26 +978,17 @@ we need to use the result of lasp.out for alignment.</p>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lasp.CllLaspInputConfig"><code class="docutils literal notranslate"><span class="pre">CllLaspInputConfig</span></code></a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lasp.CllLaspInputConfig.Potential"><code class="docutils literal notranslate"><span class="pre">CllLaspInputConfig.Potential</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lasp.CllLaspInputConfig.Potential.LammpsPotential"><code class="docutils literal notranslate"><span class="pre">CllLaspInputConfig.Potential.LammpsPotential</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lasp.CllLaspInputConfig.Potential.LammpsPotential.input_template"><code class="docutils literal notranslate"><span class="pre">CllLaspInputConfig.Potential.LammpsPotential.input_template</span></code></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lasp.CllLaspInputConfig.Potential.LammpsPotential.model_computed_fields"><code class="docutils literal notranslate"><span class="pre">CllLaspInputConfig.Potential.LammpsPotential.model_computed_fields</span></code></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lasp.CllLaspInputConfig.Potential.LammpsPotential.model_config"><code class="docutils literal notranslate"><span class="pre">CllLaspInputConfig.Potential.LammpsPotential.model_config</span></code></a></li>
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lasp.CllLaspInputConfig.Potential.LammpsPotential.model_fields"><code class="docutils literal notranslate"><span class="pre">CllLaspInputConfig.Potential.LammpsPotential.model_fields</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lasp.CllLaspInputConfig.Potential.lammps"><code class="docutils literal notranslate"><span class="pre">CllLaspInputConfig.Potential.lammps</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lasp.CllLaspInputConfig.Potential.model_computed_fields"><code class="docutils literal notranslate"><span class="pre">CllLaspInputConfig.Potential.model_computed_fields</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lasp.CllLaspInputConfig.Potential.model_config"><code class="docutils literal notranslate"><span class="pre">CllLaspInputConfig.Potential.model_config</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lasp.CllLaspInputConfig.Potential.model_fields"><code class="docutils literal notranslate"><span class="pre">CllLaspInputConfig.Potential.model_fields</span></code></a></li>
-</ul>
-</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lasp.CllLaspInputConfig.input_template"><code class="docutils literal notranslate"><span class="pre">CllLaspInputConfig.input_template</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lasp.CllLaspInputConfig.model_computed_fields"><code class="docutils literal notranslate"><span class="pre">CllLaspInputConfig.model_computed_fields</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lasp.CllLaspInputConfig.model_config"><code class="docutils literal notranslate"><span class="pre">CllLaspInputConfig.model_config</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lasp.CllLaspInputConfig.model_fields"><code class="docutils literal notranslate"><span class="pre">CllLaspInputConfig.model_fields</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lasp.CllLaspInputConfig.potential"><code class="docutils literal notranslate"><span class="pre">CllLaspInputConfig.potential</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lasp.CllLaspInputConfig.system_files"><code class="docutils literal notranslate"><span class="pre">CllLaspInputConfig.system_files</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lasp.CllLaspInputConfig.Potential"><code class="docutils literal notranslate"><span class="pre">CllLaspInputConfig.Potential</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lasp.CllLaspInputConfig.Potential.lammps"><code class="docutils literal notranslate"><span class="pre">CllLaspInputConfig.Potential.lammps</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lasp.CllLaspInputConfig.Potential.LammpsPotential"><code class="docutils literal notranslate"><span class="pre">CllLaspInputConfig.Potential.LammpsPotential</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lasp.CllLaspInputConfig.Potential.LammpsPotential.input_template"><code class="docutils literal notranslate"><span class="pre">CllLaspInputConfig.Potential.LammpsPotential.input_template</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai2_kit.domain.lasp.CllLaspOutput"><code class="docutils literal notranslate"><span class="pre">CllLaspOutput</span></code></a><ul class="visible nav section-nav flex-column">

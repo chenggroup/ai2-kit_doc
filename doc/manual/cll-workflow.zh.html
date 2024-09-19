@@ -29,6 +29,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/autodoc_pydantic.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -143,6 +144,13 @@
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../../notebook/index.html">
     Notebooks
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../example/index.html">
+    Example
   </a>
 </li>
 
@@ -287,6 +295,13 @@ document.write(`
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../../notebook/index.html">
     Notebooks
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../example/index.html">
+    Example
   </a>
 </li>
 
@@ -468,7 +483,7 @@ document.write(`
 <section id="id1">
 <h2>简介<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>CLL 工作流通过对 DPGEN 的流程和实现进行改进，以满足更复杂的势函数训练需求以及可持续的代码集成。CLL 工作流采用闭环学习的模式，通过迭代的方式自动训练 MLP 势函数。在每一次迭代中，工作流使用由第一性原理方法生成的标记结构来训练多个 MLP 模型。然后，这些模型被用来探索新的结构作为下一次迭代的训练数据。迭代会一直持续，直到 MLP 模型的质量满足预定的标准。每次迭代的配置可根据训练需要进行更新，以进一步提高训练效率。</p>
-<p><img alt="cll-mlp-diagram" src="../../_images/cll-mlp-diagram2.svg" /></p>
+<p><img alt="cll-mlp-diagram" src="../../_images/cll-mlp-diagram.svg" /></p>
 <p>CLL 工作流的主要改进包括:</p>
 <ul class="simple">
 <li><p>更语义化的配置系统，以支持不同软件的选择，以及根据不同体系设定不同的软件配置。</p></li>

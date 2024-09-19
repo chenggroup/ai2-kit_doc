@@ -29,6 +29,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/autodoc_pydantic.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -143,6 +144,13 @@
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../../notebook/index.html">
     Notebooks
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../example/index.html">
+    Example
   </a>
 </li>
 
@@ -287,6 +295,13 @@ document.write(`
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../../notebook/index.html">
     Notebooks
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../example/index.html">
+    Example
   </a>
 </li>
 
@@ -615,7 +630,7 @@ document.write(`
 <li><p>Submit n job scripts, each job script reads the number in the input and calculates its square and writes it to the output file</p></li>
 <li><p>Post-processing: Implement a Python function to read the output values of all files and sum them after all jobs are completed</p></li>
 </ul>
-<p>The specific code implementation can be found in <a class="reference internal" href="#../../example/script/simple-workflow.py"><span class="xref myst">simple-workflow</span></a>.</p>
+<p>The specific code implementation can be found in <a class="reference download internal" download="" href="../../_downloads/10d4e4a8e35327f9bd28d8a67b97e37e/simple-workflow.py"><span class="xref download myst">simple-workflow</span></a>.</p>
 <p>From the code implementation, it can be seen that the workflow implemented through <code class="docutils literal notranslate"><span class="pre">ai2-kit</span></code> is essentially ordinary Python code, but when it is necessary to execute functions remotely or submit jobs, it will call the interface provided by <code class="docutils literal notranslate"><span class="pre">ai2-kit</span> <span class="pre">HPC</span> <span class="pre">executor</span></code>. Therefore, it is not difficult for students familiar with Python coding to get started with <code class="docutils literal notranslate"><span class="pre">ai2-kit</span></code>.</p>
 <p>More complex workflows are also implemented in the same way, but on this basis, modeling and parsing of configuration files are added, as well as the use of conditional branches and loops for flow control. If you are interested, you can refer to the code in the <code class="docutils literal notranslate"><span class="pre">ai2-kit.workflow</span></code> module.</p>
 </section>
