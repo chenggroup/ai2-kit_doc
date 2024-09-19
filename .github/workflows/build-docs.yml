@@ -15,10 +15,7 @@ jobs:
       diff: ${{ steps.compare-docs-and-notebooks.outputs.diff }}
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
-      with:
-        submodules: 'recursive'
-        token: ${{ secrets.GITLAB_TOKEN }}
+      uses: actions/checkout@v4
 
     - name: Set up Python
       uses: actions/setup-python@v2
@@ -34,13 +31,13 @@ jobs:
       run: |
         python -m pip install --upgrade pip
 
-    #- name: Fetch latest docs from GitLab
-    #  env:
-    #    GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
-    #    GITLAB_USER: ${{ secrets.GITLAB_USER }}
-    #    GITLAB_REPO_URL: ${{ secrets.GITLAB_REPO_URL }}
-    #  run: |
-    #    git clone https://${GITLAB_USER}:${GITLAB_TOKEN}@${GITLAB_REPO_URL}.git
+    - name: Fetch latest docs from GitLab
+      env:
+        GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
+        GITLAB_USER: ${{ secrets.GITLAB_USER }}
+        GITLAB_REPO_URL: ${{ secrets.GITLAB_REPO_URL }}
+      run: |
+        git clone https://${GITLAB_USER}:${GITLAB_TOKEN}@${GITLAB_REPO_URL}.git
 
     - name: Install dependencies
       run: |
