@@ -1,3 +1,3 @@
 [submodule "ai2-kit"]
 	path = ai2-kit
-	url = git@git.xmu.edu.cn:cheng-group/ai2-kit.git
+	url = https://git.xmu.edu.cn/cheng-group/ai2-kit.git

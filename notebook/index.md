@@ -1,6 +1,6 @@
 # Notebooks
 
-## Notebook
+## `ai2-cat` Usage
 ```{toctree}
 :maxdepth: 1
 
